@@ -5,15 +5,15 @@ CORPORADIR="$FS/../corpora"
 DATADIR="$FS/../onmt/data"
 MODELDIR="$FS/../onmt/models"
 LOGDIR="$FS/../onmt/logs"
-MODELTYPE="unilingual"
+MODELTYPE="generic"
 
 #PROCEDURES
 function do_train() {
-	BASEMODELNAME=$MODELPREFIX-$BASEMODELTYPE-$BASEMODELID
-	MODELNAME=$MODELPREFIX-$MODELTYPE-$BASEMODELID-$MODELID
+	MODELNAME=$MODELPREFIX-$MODELTYPE-$MODELID
 	mkdir -p $MODELDIR/$MODELNAME
+	mkdir -p $LOGDIR
 
-	onmt_train -data $DATADIR/$DATASET.$BPEID -train_from $MODELDIR/$BASEMODELNAME/${BASEMODELNAME}_best.pt \
+	onmt_train -data $DATADIR/$DATASET.$BPEID -train_from $MODELDIR/en-ti-generic-g001/en-ti-generic-g001_step_30000.pt \
 	       	-save_model $MODELDIR/$MODELNAME/$MODELNAME \
            	-layers 6 -rnn_size 512 -word_vec_size 512 -transformer_ff 2048 -heads 8  \
      	  	-encoder_type transformer -decoder_type transformer -position_encoding \
@@ -21,7 +21,7 @@ function do_train() {
 	  	-batch_size 2048 -batch_type tokens -normalization tokens -accum_count 2 \
 	  	-optim adam -adam_beta2 0.998 -decay_method noam -warmup_steps 8000 -learning_rate 2 \
 	  	-max_grad_norm 0 -param_init 0  -param_init_glorot -label_smoothing 0.1 \
-	  	-train_steps 10000000 -early_stopping 1 -early_stopping_criteria ppl \
+	  	-train_steps 10000000 -early_stopping 5 -early_stopping_criteria ppl \
 	  	-valid_steps 500 -save_checkpoint_steps 500 \
 	  	-world_size 2 -gpu_ranks 0 1 2>&1 | tee $LOGDIR/train-$MODELNAME.log
 
@@ -33,12 +33,10 @@ function do_train() {
 }
 
 #CALLS
-MODELPREFIX="ti-en"
-BASEMODELTYPE="multilingual"
-BASEMODELID="m016"
-MODELID="u001"
-DATASET="Tatoeba-uni"
-BPEID="BPE-Tatoeba-100"
+MODELPREFIX="en-ti"
+MODELID="g001"
+DATASET="tigmix"
+BPEID="BPE-bigmix3a-6000"
 do_train
 
 #ending alert 

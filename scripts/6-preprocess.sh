@@ -4,8 +4,6 @@ FS="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 CORPORADIR="$FS/../corpora"
 DATADIR="$FS/../onmt/data"
 
-BPEIDSUFFIX="BPE-Tatoeba-100"
-
 #PROCEDURES
 function preprocess() {
 	mkdir -p $DATADIR
@@ -13,27 +11,27 @@ function preprocess() {
 }
 
 #CALLS
-#Multilingual dataset
-CORPUSTRAIN="$CORPORADIR/OPUS/Tatoeba.amti-en.train.norm.fixel.masprep.tok.low"
-CORPUSDEV="$CORPORADIR/OPUS/Tatoeba.en-ti.dev.norm.fixel.masprep.tok.low"
-SRCTRAIN="amti"
-TGTTRAIN="en"
-SRCDEV="ti"
-TGTDEV="en"
-DATASET="Tatoeba-multi"
-preprocess
+BPEIDSUFFIX="BPE-bigmix3a-6000"
 
-#Unilingual dataset
-CORPUSTRAIN="$CORPORADIR/OPUS/Tatoeba.en-ti.train.norm.fixel.masprep.tok.low"
-CORPUSDEV="$CORPORADIR/OPUS/Tatoeba.en-ti.dev.norm.fixel.masprep.tok.low"
-SRCTRAIN="ti"
-TGTTRAIN="en"
-SRCDEV="ti"
-TGTDEV="en"
-DATASET="Tatoeba-uni"
+#Tigmix
+CORPUSTRAIN="$CORPORADIR/tigmix/tigmix.train.norm.fixel.masprep.tok.low"
+CORPUSDEV="$CORPORADIR/tigmix/tigmix.dev.norm.fixel.masprep.tok.low"
+SRCTRAIN="en"
+TGTTRAIN="ti"
+SRCDEV="en"
+TGTDEV="ti"
+DATASET="tigmix"
 preprocess
 
 #In-domain dataset
+CORPUSTRAIN="$CORPORADIR/twbtm/twb.train.norm.fixel.tok.low"
+CORPUSDEV="$CORPORADIR/twbtm/twb.test.norm.fixel.tok.low"
+SRCTRAIN="en"
+TGTTRAIN="ti"
+SRCDEV="en"
+TGTDEV="ti"
+DATASET="twbtm"
+preprocess
 
 #ending alert 
 echo -en "\007"

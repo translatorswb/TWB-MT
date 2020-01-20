@@ -24,11 +24,11 @@ function do_evaluate() {
 }
 
 #CALLS
-MODELPREFIX="ti-en"
+MODELPREFIX="en-ti"
 MODELTYPE="indomain"
-MODELID="m016-u001-i001"
-BPEID="BPE-Tatoeba-100"
-CORPUSTEST="$CORPORADIR/test-corpus/test.norm.fixel.tok.low"
-SRC="ti"
-TGT="en"
+MODELID="g001-i001"
+BPEID="BPE-bigmix3a-6000"
+CORPUSTEST="$CORPORADIR/twbtm/twb.test.norm.fixel.tok.low"
+SRC="en"
+TGT="ti"
 do_evaluate

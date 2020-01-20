@@ -11,6 +11,7 @@ MODELTYPE="multilingual"
 function do_train() {
 	MODELNAME=$MODELPREFIX-$MODELTYPE-$MODELID
 	mkdir -p $MODELDIR/$MODELNAME
+	mkdir -p $LOGDIR
 
 	onmt_train -data $DATADIR/$DATASET.$BPEID -save_model $MODELDIR/$MODELNAME/$MODELNAME \
            -layers 6 -rnn_size 512 -word_vec_size 512 -transformer_ff 2048 -heads 8  \
