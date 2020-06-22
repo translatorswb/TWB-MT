@@ -6,25 +6,29 @@ CORPORADIR="$FS/../corpora"
 
 #PROCEDURES
 function clean_and_split() {
-	python $FS/data_prep.py $C $CORPORADIR/$CORPUS/$C.$SUFFIX.$SRC $CORPORADIR/$CORPUS/$C.$SUFFIX.$TGT $EXCLUDESET tgt
+	python $FS/data_prep.py $C $CORPORADIR/$CORPUS/$C.$SUFFIX.$SRC $CORPORADIR/$CORPUS/$C.$SUFFIX.$TGT $DEVSIZE $EXCLUDESET $EXCLUDEFROM
 }
 
 #CALLS
-CORPUS="OPUS"
-C="Tatoeba.amti-en"
-SRC="amti"
-TGT="en"
-SUFFIX="norm.fixel"
-EXCLUDESET="$CORPORADIR/test-corpus/test.en"
-clean_and_split
-
-CORPUS="OPUS"
-C="Tatoeba.en-ti"
+CORPUS="tigmix"
+C="tigmix"
 SRC="ti"
 TGT="en"
 SUFFIX="norm.fixel"
-EXCLUDESET="$CORPORADIR/test-corpus/test.en"
+DEVSIZE=1000
+EXCLUDESET="$CORPORADIR/jw300-test/test.en"
+EXCLUDEFROM="src"
 clean_and_split
+
+#CORPUS="twbtm"
+#C="twb.train"
+#SRC="ti"
+#TGT="en"
+#SUFFIX="norm.fixel"
+#DEVSIZE=200
+#EXCLUDESET=""
+#EXCLUDEFROM=""
+#clean_and_split
 
 #ending alert 
 echo -en "\007"

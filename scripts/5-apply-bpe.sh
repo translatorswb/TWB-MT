@@ -7,57 +7,54 @@ BPEDIR="$FS/../onmt/bpe"
 
 #PROCEDURES
 function apply_bpe() {
+	BPE=$BPEDIR/$BPEID.codes
+	VOCABSRC=$BPEDIR/$BPEID.$BPESRC.vocab
+	#VOCABTGT=$BPEDIR/$BPEID.$BPETGT.vocab
+
 	subword-nmt apply-bpe -c $BPE --vocabulary $VOCABSRC < $CORPORADIR/$CORPUS/$C.$SUFFIX.$SRC > $CORPORADIR/$CORPUS/$C.$SUFFIX.$BPEID.$SRC
-	subword-nmt apply-bpe -c $BPE --vocabulary $VOCABTGT < $CORPORADIR/$CORPUS/$C.$SUFFIX.$TGT > $CORPORADIR/$CORPUS/$C.$SUFFIX.$BPEID.$TGT
+	#subword-nmt apply-bpe -c $BPE --vocabulary $VOCABTGT < $CORPORADIR/$CORPUS/$C.$SUFFIX.$TGT > $CORPORADIR/$CORPUS/$C.$SUFFIX.$BPEID.$TGT
 }
 
 function apply_bpe_to_sets() {
+	BPE=$BPEDIR/$BPEID.codes
+	VOCABSRC=$BPEDIR/$BPEID.$BPESRC.vocab
+	#VOCABTGT=$BPEDIR/$BPEID.$BPETGT.vocab
+
 	for SET in $SETS; do
 		subword-nmt apply-bpe -c $BPE --vocabulary $VOCABSRC < $CORPORADIR/$CORPUS/$C.$SET.$SUFFIX.$SRC > $CORPORADIR/$CORPUS/$C.$SET.$SUFFIX.$BPEID.$SRC
-		subword-nmt apply-bpe -c $BPE --vocabulary $VOCABTGT < $CORPORADIR/$CORPUS/$C.$SET.$SUFFIX.$TGT > $CORPORADIR/$CORPUS/$C.$SET.$SUFFIX.$BPEID.$TGT
+		#subword-nmt apply-bpe -c $BPE --vocabulary $VOCABTGT < $CORPORADIR/$CORPUS/$C.$SET.$SUFFIX.$TGT > $CORPORADIR/$CORPUS/$C.$SET.$SUFFIX.$BPEID.$TGT
 	done
 }
 
 #CALLS
-BPEID="BPE-Tatoeba-100"
-BPESRC="amti"
-BPETGT="en"
-BPE=$BPEDIR/$BPEID.codes
-VOCABSRC=$BPEDIR/$BPEID.$BPESRC.vocab
-VOCABTGT=$BPEDIR/$BPEID.$BPETGT.vocab
+BPEID="BPE-tigmix-4000"
+BPESRC="en"
+#BPETGT="ti"
 
-#Multilingual
-CORPUS="OPUS"
-C="Tatoeba.amti-en"
+#tigmix
+CORPUS="tigmix"
+C="tigmix"
 SUFFIX="norm.fixel.masprep.tok.low"
 SETS="train dev"
-SRC="amti"
-TGT="en"
+SRC="en"
+TGT="ti"
 apply_bpe_to_sets
 
-#Single-lang (ti)
-CORPUS="OPUS"
-C="Tatoeba.en-ti"
-SUFFIX="norm.fixel.masprep.tok.low"
-SETS="train dev"
-SRC="ti"
-TGT="en"
-apply_bpe_to_sets
-
-#Single-lang (am)
-CORPUS="OPUS"
-C="Tatoeba.am-en"
+#in-domain
+CORPUS="twbtm"
+C="twb"
 SUFFIX="norm.fixel.tok.low"
-SRC="am"
-TGT="en"
-apply_bpe
+SETS="train test dev"
+SRC="en"
+TGT="ti"
+apply_bpe_to_sets
 
 #Test
-CORPUS="test-corpus"
+CORPUS="jw300-test"
 C="test"
 SUFFIX="norm.fixel.tok.low"
-SRC="ti"
-TGT="en"
+SRC="en"
+TGT="ti"
 apply_bpe
 
 #ending alert 

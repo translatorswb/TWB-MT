@@ -13,21 +13,23 @@ function clean_text() {
 }
 
 #CALLS
-CORPUS="OPUS"
-C="Tatoeba.amti-en"
-LANGS="en amti"
-clean_text
-
-C="Tatoeba.en-ti"
+CORPUS="tigmix"
+C="tigmix"
 LANGS="en ti"
 clean_text
 
-C="Tatoeba.am-en"
-LANGS="en am"
+CORPUS="twbtm"
+C="twb.train"
+LANGS="en ti"
+clean_text
+C="twb.dev"
+LANGS="en ti"
+clean_text
+C="twb.test"
+LANGS="en ti"
 clean_text
 
-#Test data
-CORPUS="test-corpus"
+CORPUS="jw300-test"
 C="test"
 LANGS="en ti"
 clean_text

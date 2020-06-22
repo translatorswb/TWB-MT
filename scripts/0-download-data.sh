@@ -14,21 +14,26 @@ function download_corpus() {
 	rm *.zip LICENSE README *.xml
 }
 
+function download_opus() {
+	mkdir -p $CORPORADIR/$CORPUS
+	cd $CORPORADIR/$CORPUS
+
+	opus_read -d $CORPUS -s $SRC -t $TGT -wm moses -w $CORPUS.$src $CORPUS.$tgt -q
+	gunzip $CORPUS_latest_xml_$SRC-$TGT.xml.gz
+}
+
 #DOWNLOAD CALLS
-CORPUS="OPUS" 
-LINK="https://object.pouta.csc.fi/OPUS-Tatoeba/v20190709/moses/en-ti.txt.zip"
-download_corpus
+CORPUS="Tatoeba" 
+#LINK="https://object.pouta.csc.fi/OPUS-Tatoeba/v20190709/moses/en-ti.txt.zip"
+#download_corpus
+SRC="en"
+TGT="ti"
+download_opus
 
-LINK="https://object.pouta.csc.fi/OPUS-Tatoeba/v20190709/moses/am-en.txt.zip"
-download_corpus
 
-#Merge multilingual data
-cat $CORPORADIR/$CORPUS/Tatoeba.am-en.am $CORPORADIR/$CORPUS/Tatoeba.en-ti.ti > $CORPORADIR/$CORPUS/Tatoeba.amti-en.amti
-cat $CORPORADIR/$CORPUS/Tatoeba.am-en.en $CORPORADIR/$CORPUS/Tatoeba.en-ti.en > $CORPORADIR/$CORPUS/Tatoeba.amti-en.en
+CORPUS="JW300"
+SRC="en"
+TGT="ti"
+download_opus
 
-#Make toy text corpus
-CORPUS="test-corpus"
-mkdir -p $CORPORADIR/$CORPUS
-head -n10 $CORPORADIR/OPUS/Tatoeba.en-ti.ti > $CORPORADIR/$CORPUS/test.ti
-head -n10 $CORPORADIR/OPUS/Tatoeba.en-ti.en > $CORPORADIR/$CORPUS/test.en
 
