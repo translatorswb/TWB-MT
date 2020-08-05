@@ -9,27 +9,27 @@ BPEDIR="$FS/../onmt/bpe"
 function apply_bpe() {
 	BPE=$BPEDIR/$BPEID.codes
 	VOCABSRC=$BPEDIR/$BPEID.$BPESRC.vocab
-	#VOCABTGT=$BPEDIR/$BPEID.$BPETGT.vocab
+	VOCABTGT=$BPEDIR/$BPEID.$BPETGT.vocab
 
 	subword-nmt apply-bpe -c $BPE --vocabulary $VOCABSRC < $CORPORADIR/$CORPUS/$C.$SUFFIX.$SRC > $CORPORADIR/$CORPUS/$C.$SUFFIX.$BPEID.$SRC
-	#subword-nmt apply-bpe -c $BPE --vocabulary $VOCABTGT < $CORPORADIR/$CORPUS/$C.$SUFFIX.$TGT > $CORPORADIR/$CORPUS/$C.$SUFFIX.$BPEID.$TGT
+	subword-nmt apply-bpe -c $BPE --vocabulary $VOCABTGT < $CORPORADIR/$CORPUS/$C.$SUFFIX.$TGT > $CORPORADIR/$CORPUS/$C.$SUFFIX.$BPEID.$TGT
 }
 
 function apply_bpe_to_sets() {
 	BPE=$BPEDIR/$BPEID.codes
 	VOCABSRC=$BPEDIR/$BPEID.$BPESRC.vocab
-	#VOCABTGT=$BPEDIR/$BPEID.$BPETGT.vocab
+	VOCABTGT=$BPEDIR/$BPEID.$BPETGT.vocab
 
 	for SET in $SETS; do
 		subword-nmt apply-bpe -c $BPE --vocabulary $VOCABSRC < $CORPORADIR/$CORPUS/$C.$SET.$SUFFIX.$SRC > $CORPORADIR/$CORPUS/$C.$SET.$SUFFIX.$BPEID.$SRC
-		#subword-nmt apply-bpe -c $BPE --vocabulary $VOCABTGT < $CORPORADIR/$CORPUS/$C.$SET.$SUFFIX.$TGT > $CORPORADIR/$CORPUS/$C.$SET.$SUFFIX.$BPEID.$TGT
+		subword-nmt apply-bpe -c $BPE --vocabulary $VOCABTGT < $CORPORADIR/$CORPUS/$C.$SET.$SUFFIX.$TGT > $CORPORADIR/$CORPUS/$C.$SET.$SUFFIX.$BPEID.$TGT
 	done
 }
 
 #CALLS
-BPEID="BPE-tigmix-4000"
+BPEID="BPE-enti-tigmix-4000"
 BPESRC="en"
-#BPETGT="ti"
+BPETGT="ti"
 
 #tigmix
 CORPUS="tigmix"

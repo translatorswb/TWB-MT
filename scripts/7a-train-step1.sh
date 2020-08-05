@@ -33,8 +33,8 @@ function do_train() {
 }
 
 #CALLS
-MODELPREFIX="en_bpe-ti"
-BPEID="BPE-tigmix-4000"
+MODELPREFIX="enti-srctgtbpe"
+BPEID="BPE-enti-tigmix-4000"
 MODELID="m001"
 DATASET="tigmix"
 do_train

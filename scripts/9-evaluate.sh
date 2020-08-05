@@ -17,18 +17,18 @@ function do_evaluate() {
 	echo ">>> RESULTS FOR: $(basename $INFERENCE)" 
 
 	$MTTOOLSDIR/eval/eval_bleu.sh $GROUNDTRUTH $INFERENCE  | tee $EVALOUT.bleu
-	python $MTTOOLSDIR/eval/eval_chrf.py $GROUNDTRUTH $INFERENCE  | tee $EVALOUT.chrf
-	$MTTOOLSDIR/eval/eval_meteor.sh $GROUNDTRUTH $INFERENCE  | tee $EVALOUT.meteor
+	#python $MTTOOLSDIR/eval/eval_chrf.py $GROUNDTRUTH $INFERENCE  | tee $EVALOUT.chrf
+	#$MTTOOLSDIR/eval/eval_meteor.sh $GROUNDTRUTH $INFERENCE  | tee $EVALOUT.meteor
 	
 	echo "======================================="
 }
 
 #CALLS
-MODELPREFIX="en-ti"
-MODELTYPE="indomain"
-MODELID="g001-i001"
-BPEID="BPE-bigmix3a-6000"
-CORPUSTEST="$CORPORADIR/twbtm/twb.test.norm.fixel.tok.low"
+MODELPREFIX="enti-srctgtbpe"
+MODELTYPE="generic"
+MODELID="m001"
+BPEID="BPE-enti-tigmix-4000"
+CORPUSTEST="$CORPORADIR/tigmix/tigmix.dev.norm.fixel.masprep.tok.low"
 SRC="en"
 TGT="ti"
 do_evaluate
