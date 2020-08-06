@@ -12,12 +12,13 @@ import pandas as pd
 DATASET_NAME = sys.argv[1]
 ALL_SRC_PATH = sys.argv[2]
 ALL_TGT_PATH = sys.argv[3]
+DEV_SIZE = int(sys.argv[4])
 
 #Script arguments for optional test set to exclude
-if len(sys.argv) > 4:
+if len(sys.argv) > 5:
     EXCLUDE_TEST = True
-    TEST_PATH = sys.argv[4]
-    TEST_SIDE = sys.argv[5] #'src' or 'tgt'
+    TEST_PATH = sys.argv[5]
+    TEST_SIDE = sys.argv[6] #'src' or 'tgt'
 else:
     EXCLUDE_TEST = False
 
@@ -25,9 +26,10 @@ else:
 DROP_CONFLICTING = False
 LOWERCASE = False    #To convert all text to lowercase 
 ALLOCATE_DEV = True        #To allocate a development set
-DEV_SIZE = 10
+#DEV_SIZE = 1000
 SEED = 42
 OUTPUT_SUFFIX = "masprep"
+GEEZ_LANGS = ["ti", "am", "amti"]
 
 #Variables to derive from arguments
 DATADIR = os.path.dirname(ALL_SRC_PATH)
@@ -87,8 +89,11 @@ print("After test & empty skipping: %i"%len(df))
 df_pp = df.drop_duplicates()
 print("After drop duplicates: %i"%len(df_pp))
 
-#drop non-geez lines from source
-df_pp = df_pp[df_pp.source_sentence.str.contains('[\u1200-\u137f|\u1380-\u1394|\u2d80-\u2ddf|\uab00-\uab2f]',case=False)]
+#drop non-geez lines
+if SRC_LANG in GEEZ_LANGS:
+    df_pp = df_pp[df_pp.source_sentence.str.contains('[\u1200-\u137f|\u1380-\u1394|\u2d80-\u2ddf|\uab00-\uab2f]',case=False)]
+if TGT_LANG in GEEZ_LANGS:
+    df_pp = df_pp[df_pp.target_sentence.str.contains('[\u1200-\u137f|\u1380-\u1394|\u2d80-\u2ddf|\uab00-\uab2f]',case=False)]
 print("After drop non-geez: %i"%len(df_pp))
 
 # drop conflicting translations

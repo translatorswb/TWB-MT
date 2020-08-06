@@ -8,6 +8,8 @@ TESTDIR="$FS/../onmt/test"
 
 #PROCEDURES
 function do_test() {
+	mkdir -p $TESTDIR
+
 	MODELNAME=$MODELPREFIX-$MODELTYPE-$MODELID
 	TOTEST=$CORPUSTEST.$BPEID.$SRC
 	echo "Translating..."
@@ -21,13 +23,13 @@ function do_test() {
 }
 
 #CALLS
-MODELPREFIX="ti-en"
+MODELPREFIX="enti-srctgtbpe"
 MODELTYPE="indomain"
-MODELID="m016-u001-i001"
-BPEID="BPE-Tatoeba-100"
-CORPUSTEST="$CORPORADIR/test-corpus/test.norm.fixel.tok.low"
-SRC="ti"
-TGT="en"
+MODELID="g001-i001"
+BPEID="BPE-enti-tigmix-5000"
+CORPUSTEST="$CORPORADIR/twbtm/twb.test.norm.fixel.tok.low"
+SRC="en"
+TGT="ti"
 do_test
 
 #alert 

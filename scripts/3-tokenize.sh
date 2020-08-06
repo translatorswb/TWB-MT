@@ -10,52 +10,45 @@ CORPORADIR="$FS/../corpora"
 function tokenize_sets() {
 	INDIR=$CORPORADIR/$CORPUS
 	for SET in $SETS; do
-		perl $MOSESDIR/scripts/tokenizer/tokenizer.perl -q < $INDIR/$C.$SET.$SUFFIX.$TGT > $INDIR/$C.$SET.$SUFFIX.tok.$TGT
-		perl $MOSESDIR/scripts/tokenizer/lowercase.perl -q < $INDIR/$C.$SET.$SUFFIX.tok.$TGT > $INDIR/$C.$SET.$SUFFIX.tok.low.$TGT
+		perl $MOSESDIR/scripts/tokenizer/tokenizer.perl -q < $INDIR/$C.$SET.$SUFFIX.$SRC > $INDIR/$C.$SET.$SUFFIX.tok.$SRC
+		perl $MOSESDIR/scripts/tokenizer/lowercase.perl -q < $INDIR/$C.$SET.$SUFFIX.tok.$SRC > $INDIR/$C.$SET.$SUFFIX.tok.low.$SRC
 
-		python $SRCTOKENIZER $INDIR/$C.$SET.$SUFFIX.$SRC $INDIR/$C.$SET.$SUFFIX.tok.$SRC
-		cp $INDIR/$C.$SET.$SUFFIX.tok.$SRC $INDIR/$C.$SET.$SUFFIX.tok.low.$SRC   #(if src language is uncased)
+		python $SRCTOKENIZER $INDIR/$C.$SET.$SUFFIX.$TGT $INDIR/$C.$SET.$SUFFIX.tok.$TGT
+		cp $INDIR/$C.$SET.$SUFFIX.tok.$TGT $INDIR/$C.$SET.$SUFFIX.tok.low.$TGT   #(if src language is uncased)
 	done
 }
 
 function tokenize() {
 	INDIR=$CORPORADIR/$CORPUS
-	perl $MOSESDIR/scripts/tokenizer/tokenizer.perl -q < $INDIR/$C.$SUFFIX.$TGT > $INDIR/$C.$SUFFIX.tok.$TGT
-	perl $MOSESDIR/scripts/tokenizer/lowercase.perl -q < $INDIR/$C.$SUFFIX.tok.$TGT > $INDIR/$C.$SUFFIX.tok.low.$TGT
+	perl $MOSESDIR/scripts/tokenizer/tokenizer.perl -q < $INDIR/$C.$SUFFIX.$SRC > $INDIR/$C.$SUFFIX.tok.$SRC
+	perl $MOSESDIR/scripts/tokenizer/lowercase.perl -q < $INDIR/$C.$SUFFIX.tok.$SRC > $INDIR/$C.$SUFFIX.tok.low.$SRC
 
-	python $SRCTOKENIZER $INDIR/$C.$SUFFIX.$SRC $INDIR/$C.$SUFFIX.tok.$SRC
-	cp $INDIR/$C.$SUFFIX.tok.$SRC $INDIR/$C.$SUFFIX.tok.low.$SRC #(if src language is uncased)
+	python $SRCTOKENIZER $INDIR/$C.$SUFFIX.$TGT $INDIR/$C.$SUFFIX.tok.$TGT
+	cp $INDIR/$C.$SUFFIX.tok.$TGT $INDIR/$C.$SUFFIX.tok.low.$TGT #(if src language is uncased)
 }
 
 #CALLS
-CORPUS="OPUS"
-C="Tatoeba.amti-en"
+CORPUS="tigmix"
+C="tigmix"
 SETS="train dev"
 SUFFIX="norm.fixel.masprep"
-SRC="amti"
-TGT="en"
+SRC="en"
+TGT="ti"
 tokenize_sets
 
-CORPUS="OPUS"
-C="Tatoeba.en-ti"
-SETS="train dev"
-SUFFIX="norm.fixel.masprep"
-SRC="ti"
-TGT="en"
-tokenize_sets
-
-CORPUS="OPUS"
-C="Tatoeba.am-en"
+CORPUS="twbtm"
+C="twb"
+SETS="train test dev"
 SUFFIX="norm.fixel"
-SRC="am"
-TGT="en"
-tokenize
+SRC="en"
+TGT="ti"
+tokenize_sets
 
-CORPUS="test-corpus"
+CORPUS="jw300-test"
 C="test"
 SUFFIX="norm.fixel"
-SRC="ti"
-TGT="en"
+SRC="en"
+TGT="ti"
 tokenize
 
 #ending alert

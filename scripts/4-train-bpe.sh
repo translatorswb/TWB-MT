@@ -9,17 +9,22 @@ BPEDIR="$FS/../onmt/bpe"
 function train_bpe() {
 	mkdir -p $BPEDIR
 	INDIR=$CORPORADIR/$CORPUS
+	
 	subword-nmt learn-joint-bpe-and-vocab --input $INDIR/$C.$SRC $INDIR/$C.$TGT -s $OPS \
-		        -o $BPEDIR/$BPEID-$OPS.codes --write-vocabulary $BPEDIR/$BPEID-$OPS.$SRC.vocab $BPEDIR/$BPEID-$OPS.$TGT.vocab
+		-o $BPEDIR/$BPEID-$OPS.codes --write-vocabulary $BPEDIR/$BPEID-$OPS.$SRC.vocab $BPEDIR/$BPEID-$OPS.$TGT.vocab
+	
+	#bpe on src only
+	#subword-nmt learn-joint-bpe-and-vocab --input $INDIR/$C.$SRC -s $OPS \
+#		        -o $BPEDIR/$BPEID-$OPS.codes --write-vocabulary $BPEDIR/$BPEID-$OPS.$SRC.vocab
 }
 
 #CALLS
-CORPUS="OPUS"
-C="Tatoeba.amti-en.train.norm.fixel.masprep.tok.low"
-SRC="amti"
-TGT="en"
-BPEID="BPE-Tatoeba"
-OPS=100
+CORPUS="tigmix"
+C="tigmix.train.norm.fixel.masprep.tok.low"
+SRC="en"
+TGT="ti"
+BPEID="BPE-enti-tigmix"
+OPS=5000
 train_bpe
 
 #Ending alert
