@@ -24,7 +24,7 @@ C="tigmix.train.norm.fixel.masprep.tok.low"
 SRC="en"
 TGT="ti"
 BPEID="BPE-enti-tigmix"
-OPS=4000
+OPS=5000
 train_bpe
 
 #Ending alert

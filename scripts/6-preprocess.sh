@@ -14,7 +14,7 @@ function preprocess() {
 }
 
 #CALLS
-BPEIDSUFFIX="BPE-enti-tigmix-4000"
+BPEIDSUFFIX="BPE-enti-tigmix-5000"
 
 #Tigmix
 CORPUSTRAIN="$CORPORADIR/tigmix/tigmix.train.norm.fixel.masprep.tok.low"

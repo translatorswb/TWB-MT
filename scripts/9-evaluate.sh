@@ -25,10 +25,11 @@ function do_evaluate() {
 
 #CALLS
 MODELPREFIX="enti-srctgtbpe"
-MODELTYPE="generic"
-MODELID="m001"
-BPEID="BPE-enti-tigmix-4000"
-CORPUSTEST="$CORPORADIR/tigmix/tigmix.dev.norm.fixel.masprep.tok.low"
+MODELTYPE="indomain"
+MODELID="g001-i001"
+BPEID="BPE-enti-tigmix-5000"
+#CORPUSTEST="$CORPORADIR/jw300-test/test.norm.fixel.tok.low"
+CORPUSTEST="$CORPORADIR/twbtm/twb.test.norm.fixel.tok.low"
 SRC="en"
 TGT="ti"
 do_evaluate

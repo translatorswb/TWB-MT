@@ -12,8 +12,8 @@ function clean_and_split() {
 #CALLS
 CORPUS="tigmix"
 C="tigmix"
-SRC="ti"
-TGT="en"
+SRC="en"
+TGT="ti"
 SUFFIX="norm.fixel"
 DEVSIZE=1000
 EXCLUDESET="$CORPORADIR/jw300-test/test.en"

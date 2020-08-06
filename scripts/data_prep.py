@@ -29,6 +29,7 @@ ALLOCATE_DEV = True        #To allocate a development set
 #DEV_SIZE = 1000
 SEED = 42
 OUTPUT_SUFFIX = "masprep"
+GEEZ_LANGS = ["ti", "am", "amti"]
 
 #Variables to derive from arguments
 DATADIR = os.path.dirname(ALL_SRC_PATH)
@@ -88,8 +89,11 @@ print("After test & empty skipping: %i"%len(df))
 df_pp = df.drop_duplicates()
 print("After drop duplicates: %i"%len(df_pp))
 
-#drop non-geez lines from source
-df_pp = df_pp[df_pp.source_sentence.str.contains('[\u1200-\u137f|\u1380-\u1394|\u2d80-\u2ddf|\uab00-\uab2f]',case=False)]
+#drop non-geez lines
+if SRC_LANG in GEEZ_LANGS:
+    df_pp = df_pp[df_pp.source_sentence.str.contains('[\u1200-\u137f|\u1380-\u1394|\u2d80-\u2ddf|\uab00-\uab2f]',case=False)]
+if TGT_LANG in GEEZ_LANGS:
+    df_pp = df_pp[df_pp.target_sentence.str.contains('[\u1200-\u137f|\u1380-\u1394|\u2d80-\u2ddf|\uab00-\uab2f]',case=False)]
 print("After drop non-geez: %i"%len(df_pp))
 
 # drop conflicting translations
