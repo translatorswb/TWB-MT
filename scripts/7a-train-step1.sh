@@ -9,19 +9,20 @@ MODELTYPE="generic"
 
 #PROCEDURES
 function do_train() {
-	MODELNAME=$MODELPREFIX-$MODELTYPE-$MODELID
+	MODELNAME=$MODELPREFIX-$MODELSRC-$MODELTGT-$MODELTYPE-$MODELID
 	mkdir -p $MODELDIR/$MODELNAME
 	mkdir -p $LOGDIR
 
-	onmt_train -data $DATADIR/$DATASET.$BPEID -save_model $MODELDIR/$MODELNAME/$MODELNAME \
+	onmt_train -data $DATADIR/$DATASET.$BPEID \
+		   -save_model $MODELDIR/$MODELNAME/$MODELNAME \
 		   -layers 6 -rnn_size 512 -word_vec_size 512 -transformer_ff 2048 -heads 8  \
 		   -encoder_type transformer -decoder_type transformer -position_encoding \
 		   -max_generator_batches 2 -dropout 0.2 \
 	       	   -batch_size 2048 -batch_type tokens -normalization tokens -accum_count 2 \
 	   	   -optim adam -adam_beta2 0.998 -decay_method noam -warmup_steps 8000 -learning_rate 2 \
 		   -max_grad_norm 0 -param_init 0  -param_init_glorot -label_smoothing 0.1 \
-		   -train_steps 100000 -early_stopping 5 -early_stopping_criteria ppl \
-		   -valid_steps 1150 -save_checkpoint_steps 1150 \
+		   -train_steps 1000000 -early_stopping 5 -early_stopping_criteria ppl \
+		   -valid_steps 4400 -save_checkpoint_steps 4400 \
 		   -world_size 2 -gpu_ranks 0 1 2>&1 | tee $LOGDIR/train-$MODELNAME.log
 
 	#Make a symlink to best model
@@ -32,10 +33,36 @@ function do_train() {
 }
 
 #CALLS
-MODELPREFIX="enti-srctgtbpe"
-BPEID="BPE-enti-tigmix-5000"
-MODELID="g001"
-DATASET="tigmix"
+#MODELPREFIX="swcmix"
+#MODELSRC="swc"
+#MODELTGT="fra"
+#BPEID="BPE-swcmix-5000"
+#MODELID="s001"
+#DATASET="swcmix.swc-fra"
+#do_train
+
+#MODELPREFIX="swmix"
+#MODELSRC="fr"
+#MODELTGT="sw"
+#BPEID="BPE-swfrmix-5000"
+#MODELID="s001"
+#DATASET="swmix.fr-sw"
+#do_train
+
+MODELPREFIX="mtedmix"
+MODELSRC="fr"
+MODELTGT="sw"
+BPEID="BPE-mtedmix-5000"
+MODELID="s001"
+DATASET="mtedmix.fr-sw"
+#do_train
+
+MODELPREFIX="monomix"
+MODELSRC="fr"
+MODELTGT="sw"
+BPEID="BPE-mtedmix-5000"
+MODELID="s001"
+DATASET="monomix.fr-sw"
 do_train
 
 #ending alert 

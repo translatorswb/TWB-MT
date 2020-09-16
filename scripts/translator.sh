@@ -2,12 +2,14 @@
 # Usage: ./translator.sh <input_file>
 # Outputs translation to a file named output
 
-# Set the following variables 
-MDIR="" # Directory where mosesdecoder is 
+FS="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
-MODELFILE="" 	#Path to OpenNMT-py model (.pt)
-BPE="" 		#Path to BPE codes
-VOCAB=""	#Path to BPE vocabulary file
+# Set the following variables 
+MDIR="$HOME/extSW/mosesdecoder" # Directory where mosesdecoder is 
+
+MODELFILE="$FS/../onmt/models/mtedmix-sw-fr-generic-s001/mtedmix-sw-fr-generic-s001_best.pt" #Path to OpenNMT-py model (.pt)
+BPE="$FS/../onmt/bpe/BPE-mtedmix-5000.codes" 		#Path to BPE codes
+VOCAB="$FS/../onmt/bpe/BPE-mtedmix-5000.sw.vocab"	#Path to BPE vocabulary file
 
 python2 normalize-chars.py -l en < $1 > input.norm
 python2 fix-ellipsis.py  < input.norm > input.norm.fixel
@@ -22,7 +24,7 @@ cat input.norm.fixel.tok.low.bpe.inf | sed -r 's/(@@ )|(@@ ?$)//g' > input.norm.
 
 perl $MDIR/scripts/tokenizer/detokenizer.perl < input.norm.fixel.tok.low.bpe.inf.unbpe > input.norm.fixel.tok.low.bpe.inf.unbpe.detok
 
-python3 recase.py input.norm.fixel.tok.low.bpe.inf.unbpe.detok
+python3 recase2.py input.norm.fixel.tok.low.bpe.inf.unbpe.detok
 
 cp input.norm.fixel.tok.low.bpe.inf.unbpe.detok.cap output
 

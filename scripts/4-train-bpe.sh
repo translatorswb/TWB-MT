@@ -19,11 +19,27 @@ function train_bpe() {
 }
 
 #CALLS
-CORPUS="tigmix"
-C="tigmix.train.norm.fixel.masprep.tok.low"
-SRC="en"
-TGT="ti"
-BPEID="BPE-enti-tigmix"
+#CORPUS="mix.swc"
+#C="swcmix.train.norm.fixel.masprep.tok.low"
+#SRC="swc"
+#TGT="fra"
+#BPEID="BPE-swcmix"
+#OPS=5000
+#train_bpe
+
+#CORPUS="mix.swfr"
+#C="swfrmix.train.norm.fixel.masprep.tok.low"
+#SRC="sw"
+#TGT="fr"
+#BPEID="BPE-swfrmix"
+#OPS=5000
+#train_bpe
+
+CORPUS="mix.mted"
+C="mtedmix.train.norm.fixel.masprep.tok.low"
+SRC="sw"
+TGT="fr"
+BPEID="BPE-mtedmix"
 OPS=5000
 train_bpe
 

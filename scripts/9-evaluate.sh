@@ -10,8 +10,8 @@ EVALDIR="$FS/../onmt/eval"
 #PROCEDURES
 function do_evaluate() {
 	GROUNDTRUTH="$CORPUSTEST.$TGT"
-	INFERENCE="$TESTDIR/$(basename $CORPUSTEST).$BPEID.$SRC.inf-$MODELTYPE-$MODELID.unBPE.$TGT"
-	EVALOUT="$EVALDIR/$(basename $CORPUSTEST).$BPEID.$SRC.inf-$MODELTYPE-$MODELID.$TGT"
+	INFERENCE="$TESTDIR/$(basename $CORPUSTEST).$BPEID.$SRC.inf-$MODELPREFIX-$MODELTYPE-$MODELID.unBPE.$TGT"
+	EVALOUT="$EVALDIR/$(basename $CORPUSTEST).$BPEID.$SRC.inf-$MODELPREFIX-$MODELTYPE-$MODELID.$TGT"
 
 	echo "======================================="
 	echo ">>> RESULTS FOR: $(basename $INFERENCE)" 
@@ -24,12 +24,13 @@ function do_evaluate() {
 }
 
 #CALLS
-MODELPREFIX="enti-srctgtbpe"
-MODELTYPE="indomain"
-MODELID="g001-i001"
-BPEID="BPE-enti-tigmix-5000"
-#CORPUSTEST="$CORPORADIR/jw300-test/test.norm.fixel.tok.low"
-CORPUSTEST="$CORPORADIR/twbtm/twb.test.norm.fixel.tok.low"
-SRC="en"
-TGT="ti"
+MODELPREFIX="monomix"
+MODELTYPE="inswc"
+MODELID="s001-i001"
+BPEID="BPE-mtedmix-5000"
+CORPUSTEST="$CORPORADIR/mix.swc/swcmix.test.norm.fixel.masprep.tok.low"
+SRC="fra"
+TGT="swc"
 do_evaluate
+
+

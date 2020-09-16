@@ -13,25 +13,24 @@ function clean_text() {
 }
 
 #CALLS
-CORPUS="tigmix"
-C="tigmix"
-LANGS="en ti"
-clean_text
+#CORPUS="mix.swc"
+#C="swcmix"
+#LANGS="swc fra"
+#clean_text
 
-CORPUS="twbtm"
-C="twb.train"
-LANGS="en ti"
-clean_text
-C="twb.dev"
-LANGS="en ti"
-clean_text
-C="twb.test"
-LANGS="en ti"
-clean_text
+#CORPUS="mix.swfr"
+#C="swfrmix"
+#LANGS="sw fr"
+#clean_text
 
-CORPUS="jw300-test"
-C="test"
-LANGS="en ti"
+#CORPUS="mix.mted"
+#C="mtedmix"
+#LANGS="sw fr"
+#clean_text
+
+CORPUS="mix.mono"
+C="monomix"
+LANGS="sw fr"
 clean_text
 
 #ending alert 

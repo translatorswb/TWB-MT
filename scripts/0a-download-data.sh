@@ -23,17 +23,13 @@ function download_opus() {
 }
 
 #DOWNLOAD CALLS
-CORPUS="Tatoeba" 
-#LINK="https://object.pouta.csc.fi/OPUS-Tatoeba/v20190709/moses/en-ti.txt.zip"
-#download_corpus
-SRC="en"
-TGT="ti"
-download_opus
+CORPUS="GlobalVoices"
+LINK="https://object.pouta.csc.fi/OPUS-GlobalVoices/v2017q3/moses/fr-sw.txt.zip"
+download_corpus
 
 
-CORPUS="JW300"
-SRC="en"
-TGT="ti"
-download_opus
+CORPUS="Tanzil"
+LINK="https://object.pouta.csc.fi/OPUS-Tanzil/v1/moses/fr-sw.txt.zip"
+download_corpus
 
 
