@@ -26,28 +26,35 @@ function tokenize() {
 }
 
 #CALLS
-#CORPUS="mix.swc"
-#C="swcmix"
-#SETS="train dev test"
-#SUFFIX="norm.fixel.masprep"
-#SRC="swc"
-#TGT="fra"
+CORPUS="mix.twb"
+C="twbmix"
+SETS="train dev"
+SUFFIX="norm.fixel.masprep"
+SRC="swc"
+TGT="fra"
 #tokenize_sets
 
-#CORPUS="mix.swfr"
-#C="swfrmix"
-#SETS="train dev"
-#SUFFIX="norm.fixel.masprep"
-#SRC="sw"
-#TGT="fr"
+CORPUS="test.swc"
+C="test"
+SUFFIX="norm.fixel"
+SRC="swc"
+TGT="fra"
+#tokenize
+
+CORPUS="mix.swc"
+C="swcmix"
+SETS="train dev"
+SUFFIX="norm.fixel.masprep"
+SRC="swc"
+TGT="fra"
 #tokenize_sets
 
-#CORPUS="mix.mted"
-#C="mtedmix"
-#SETS="train"
-#SUFFIX="norm.fixel.masprep"
-#SRC="sw"
-#TGT="fr"
+CORPUS="mix.mted"
+C="mtedmix"
+SETS="train"
+SUFFIX="norm.fixel.masprep"
+SRC="sw"
+TGT="fr"
 #tokenize_sets
 
 CORPUS="mix.mono"

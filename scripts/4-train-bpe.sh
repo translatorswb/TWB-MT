@@ -19,28 +19,20 @@ function train_bpe() {
 }
 
 #CALLS
-#CORPUS="mix.swc"
-#C="swcmix.train.norm.fixel.masprep.tok.low"
-#SRC="swc"
-#TGT="fra"
-#BPEID="BPE-swcmix"
-#OPS=5000
-#train_bpe
-
-#CORPUS="mix.swfr"
-#C="swfrmix.train.norm.fixel.masprep.tok.low"
-#SRC="sw"
-#TGT="fr"
-#BPEID="BPE-swfrmix"
-#OPS=5000
-#train_bpe
-
 CORPUS="mix.mted"
 C="mtedmix.train.norm.fixel.masprep.tok.low"
 SRC="sw"
 TGT="fr"
 BPEID="BPE-mtedmix"
-OPS=5000
+OPS=6000
+#train_bpe
+
+CORPUS="mix.mono"
+C="monomix.train.norm.fixel.masprep.tok.low"
+SRC="sw"
+TGT="fr"
+BPEID="BPE-monomix"
+OPS=6000
 train_bpe
 
 #Ending alert

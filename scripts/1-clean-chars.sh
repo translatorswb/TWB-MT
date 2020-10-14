@@ -13,19 +13,29 @@ function clean_text() {
 }
 
 #CALLS
-#CORPUS="mix.swc"
-#C="swcmix"
-#LANGS="swc fra"
+CORPUS="mix.twb"
+C="twbmix"
+LANGS="swc fra"
 #clean_text
 
-#CORPUS="mix.swfr"
-#C="swfrmix"
-#LANGS="sw fr"
+CORPUS="test.swc"
+C="test"
+LANGS="swc fra"
 #clean_text
 
-#CORPUS="mix.mted"
-#C="mtedmix"
-#LANGS="sw fr"
+CORPUS="mix.swc"
+C="swcmix"
+LANGS="swc fra"
+#clean_text
+
+CORPUS="mix.sw"
+C="swmix"
+LANGS="sw fr"
+#clean_text
+
+CORPUS="mix.mted"
+C="mtedmix"
+LANGS="sw fr"
 #clean_text
 
 CORPUS="mix.mono"

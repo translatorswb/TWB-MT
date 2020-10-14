@@ -24,16 +24,21 @@ function do_test() {
 
 #CALLS
 MODELPREFIX="monomix"
+BPEID="BPE-monomix-6000"
 MODELSRC="fr"
 MODELTGT="sw"
-MODELTYPE="inswc"
-MODELID="s001-i001"
-BPEID="BPE-mtedmix-5000"
-CORPUSTEST="$CORPORADIR/mix.swc/swcmix.test.norm.fixel.masprep.tok.low"
+MODELTYPE="intwb"
+MODELID="s001-i001-t001"
+CORPUSTEST="$CORPORADIR/test.swc/test.norm.fixel.tok.low"
 SRC="fra"
 TGT="swc"
 do_test
 
+MODELSRC="sw"
+MODELTGT="fr"
+SRC="swc"
+TGT="fra"
+do_test
 
 #alert 
 echo -en "\007"

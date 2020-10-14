@@ -5,7 +5,7 @@ CORPORADIR="$FS/../corpora"
 DATADIR="$FS/../onmt/data"
 MODELDIR="$FS/../onmt/models"
 LOGDIR="$FS/../onmt/logs"
-MODELTYPE="inswc"
+MODELTYPE="intwb"
 
 #PROCEDURES
 function do_train() {
@@ -18,8 +18,8 @@ function do_train() {
 	       	-save_model $MODELDIR/$MODELNAME/$MODELNAME \
           	-layers 6 -rnn_size 512 -word_vec_size 512 -transformer_ff 2048 -heads 8  \
      	  	-encoder_type transformer -decoder_type transformer -position_encoding \
-	  	-max_generator_batches 2 -dropout 0.2 \
-	  	-batch_size $BATCHSIZE -batch_type tokens -normalization tokens  -accum_count 2 \
+	  	-max_generator_batches 2 -dropout 0.3 \
+	  	-batch_size $BATCHSIZE  -accum_count 2 \
 	  	-optim adam -adam_beta2 0.998 -decay_method noam -warmup_steps 4000 -learning_rate 2 \
 	  	-max_grad_norm 0 -param_init 0  -param_init_glorot -label_smoothing 0.1 \
 	  	-train_steps 1000000 -early_stopping 5 -early_stopping_criteria ppl \
@@ -38,21 +38,21 @@ MODELPREFIX="monomix"
 BPEID="BPE-monomix-6000"
 MODELSRC="fr"
 MODELTGT="sw"
-BASEMODELTYPE="generic"
-BASEMODELID="s001"
-MODELID="i001"
-DATASET="swcmix.fra-swc"
-BATCHSIZE=2048
-VALIDSAVE=1500
-REPORT=50
+BASEMODELTYPE="inswc"
+BASEMODELID="s001-i001"
+MODELID="t001"
+DATASET="twbmix.fra-swc"
+BATCHSIZE=40
+VALIDSAVE=40
+REPORT=10
 do_train
 
 MODELSRC="sw"
 MODELTGT="fr"
-BASEMODELTYPE="generic"
-BASEMODELID="s001"
-MODELID="i001"
-DATASET="swcmix.swc-fra"
+BASEMODELTYPE="inswc"
+BASEMODELID="s001-i001"
+MODELID="t001"
+DATASET="twbmix.swc-fra"
 do_train
 
 #ending alert 

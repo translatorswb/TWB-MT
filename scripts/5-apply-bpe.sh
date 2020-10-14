@@ -28,45 +28,33 @@ function apply_bpe_to_sets() {
 
 #CALLS
 
-#BPE-swcmix
-#BPEID="BPE-swcmix-5000"
-#BPESRC="swc"
-#BPETGT="fra"
-
-#CORPUS="mix.swc"
-#C="swcmix"
-#SUFFIX="norm.fixel.masprep.tok.low"
-#SETS="train test dev"
-#SRC="swc"
-#TGT="fra"
-#apply_bpe_to_sets
-
-#BPE swfrmix
-#BPEID="BPE-swfrmix-5000"
-#BPESRC="sw"
-#BPETGT="fr"
-
-#CORPUS="mix.swfr"
-#C="swfrmix"
-#SUFFIX="norm.fixel.masprep.tok.low"
-#SETS="train dev"
-#SRC="sw"
-#TGT="fr"
-#apply_bpe_to_sets
-
-#CORPUS="mix.swc"
-#C="swcmix"
-#SUFFIX="norm.fixel.masprep.tok.low"
-#SETS="train test dev"
-#SRC="swc"
-#TGT="fra"
-#apply_bpe_to_sets
-
-
 #BPE mtedmix
-BPEID="BPE-mtedmix-5000"
+BPEID="BPE-monomix-6000"
 BPESRC="sw"
 BPETGT="fr"
+
+CORPUS="mix.twb"
+C="twbmix"
+SUFFIX="norm.fixel.masprep.tok.low"
+SETS="train dev"
+SRC="swc"
+TGT="fra"
+apply_bpe_to_sets
+
+CORPUS="test.swc"
+C="test"
+SUFFIX="norm.fixel.tok.low"
+SRC="swc"
+TGT="fra"
+apply_bpe
+
+CORPUS="mix.swc"
+C="swcmix"
+SUFFIX="norm.fixel.masprep.tok.low"
+SETS="train dev"
+SRC="swc"
+TGT="fra"
+apply_bpe_to_sets
 
 CORPUS="mix.mted"
 C="mtedmix"
@@ -74,23 +62,7 @@ SUFFIX="norm.fixel.masprep.tok.low"
 SETS="train"
 SRC="sw"
 TGT="fr"
-#apply_bpe_to_sets
-
-CORPUS="mix.swfr"
-C="swfrmix"
-SUFFIX="norm.fixel.masprep.tok.low"
-SETS="train dev"
-SRC="sw"
-TGT="fr"
-#apply_bpe_to_sets
-
-CORPUS="mix.swc"
-C="swcmix"
-SUFFIX="norm.fixel.masprep.tok.low"
-SETS="train test dev"
-SRC="swc"
-TGT="fra"
-#apply_bpe_to_sets
+apply_bpe_to_sets
 
 CORPUS="mix.mono"
 C="monomix"
