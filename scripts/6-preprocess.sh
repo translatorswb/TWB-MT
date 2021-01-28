@@ -52,7 +52,7 @@ preprocess
 
 #swmix fr-sw
 CORPUSTRAIN="$CORPORADIR/mix.sw/swmix.train.norm.fixel.masprep.tok.low"
-CORPUSDEV="$CORPORADIR/mix.sw/swcmix.dev.norm.fixel.masprep.tok.low"
+CORPUSDEV="$CORPORADIR/mix.swc/swcmix.dev.norm.fixel.masprep.tok.low"
 SRCTRAIN="fr"
 TGTTRAIN="sw"
 SRCDEV="fra"
