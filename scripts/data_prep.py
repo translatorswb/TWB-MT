@@ -17,8 +17,8 @@ DEV_SIZE = int(sys.argv[4])
 #Script arguments for optional test set to exclude
 if len(sys.argv) > 5:
     EXCLUDE_TEST = True
-    TEST_PATH = sys.argv[5]
-    TEST_SIDE = sys.argv[6] #'src' or 'tgt'
+    TEST_SIDE = sys.argv[5]   #'src' or 'tgt'
+    TEST_PATHS = sys.argv[6:]
 else:
     EXCLUDE_TEST = False
 
@@ -42,12 +42,13 @@ print("Trailing suffix", TRAILING_SUFFIX)
 
 #Load test sentences
 if EXCLUDE_TEST:
-    test_sents = set()
+    exclude_sents = set()
     j = 0
-    with open(TEST_PATH) as f:
-        for line in f:
-            test_sents.add(line.strip())
-            j += 1
+    for test_path in TEST_PATHS:
+        with open(test_path) as f:
+            for line in f:
+                exclude_sents.add(line.strip())
+                j += 1
     print('Loaded {} global test sentences to filter from the training/dev data.'.format(j))
 
 #Load data while skipping empty and test sentences
@@ -66,7 +67,7 @@ with open(ALL_SRC_PATH) as src, open(ALL_TGT_PATH) as tgt:
                     check_sent = line_src.strip()
                 elif TEST_SIDE == 'tgt':
                     check_sent = line_tgt.strip()
-                if check_sent not in test_sents:
+                if check_sent not in exclude_sents:
                     source.append(line_src.strip())
                     target.append(line_tgt.strip())
                 else:

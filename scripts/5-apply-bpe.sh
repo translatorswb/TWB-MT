@@ -29,7 +29,7 @@ function apply_bpe_to_sets() {
 #CALLS
 
 #BPE mtedmix
-BPEID="BPE-monomix-6000"
+BPEID="BPE-mymtedmix-6000"
 BPESRC="sw"
 BPETGT="fr"
 
@@ -41,12 +41,12 @@ SRC="swc"
 TGT="fra"
 apply_bpe_to_sets
 
-CORPUS="test.swc"
-C="test"
-SUFFIX="norm.fixel.tok.low"
-SRC="swc"
-TGT="fra"
-apply_bpe
+# CORPUS="test.swc"
+# C="test"
+# SUFFIX="norm.fixel.tok.low"
+# SRC="swc"
+# TGT="fra"
+# apply_bpe
 
 CORPUS="mix.swc"
 C="swcmix"
@@ -54,6 +54,14 @@ SUFFIX="norm.fixel.masprep.tok.low"
 SETS="train dev"
 SRC="swc"
 TGT="fra"
+apply_bpe_to_sets
+
+CORPUS="mix.sw"
+C="swmix"
+SUFFIX="norm.fixel.masprep.tok.low"
+SETS="train"
+SRC="sw"
+TGT="fr"
 apply_bpe_to_sets
 
 CORPUS="mix.mted"

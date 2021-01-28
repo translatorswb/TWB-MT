@@ -32,4 +32,3 @@ CORPUS="Tanzil"
 LINK="https://object.pouta.csc.fi/OPUS-Tanzil/v1/moses/fr-sw.txt.zip"
 download_corpus
 
-

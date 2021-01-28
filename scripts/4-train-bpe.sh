@@ -23,17 +23,17 @@ CORPUS="mix.mted"
 C="mtedmix.train.norm.fixel.masprep.tok.low"
 SRC="sw"
 TGT="fr"
-BPEID="BPE-mtedmix"
-OPS=6000
-#train_bpe
-
-CORPUS="mix.mono"
-C="monomix.train.norm.fixel.masprep.tok.low"
-SRC="sw"
-TGT="fr"
-BPEID="BPE-monomix"
+BPEID="BPE-mymtedmix"
 OPS=6000
 train_bpe
+
+# CORPUS="mix.mono"
+# C="monomix.train.norm.fixel.masprep.tok.low"
+# SRC="sw"
+# TGT="fr"
+# BPEID="BPE-monomix"
+# OPS=6000
+# train_bpe
 
 #Ending alert
 echo -en "\007"
