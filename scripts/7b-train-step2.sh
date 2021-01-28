@@ -21,7 +21,7 @@ function do_train() {
     mkdir -p $LOGDIR
 
     #For debug
-    echo "BASE: $BASEMODELNAME/${BASEMODELNAME}_best.pt"
+    # echo "BASE: $BASEMODELNAME/${BASEMODELNAME}_best.pt"
     if test -f "$MODELDIR/$BASEMODELNAME/${BASEMODELNAME}_best.pt"; then
         echo "Basemodel in its place"
     else 
