@@ -40,7 +40,7 @@ TGTTRAIN="swc"
 SRCDEV="fra"
 TGTDEV="swc"
 DATASET="swcmix"
-preprocess
+#preprocess
 
 #swcmix swc-fra
 SRCTRAIN="swc"
@@ -48,7 +48,7 @@ TGTTRAIN="fra"
 SRCDEV="swc"
 TGTDEV="fra"
 DATASET="swcmix"
-preprocess
+#preprocess
 
 #swmix fr-sw
 CORPUSTRAIN="$CORPORADIR/mix.sw/swmix.train.norm.fixel.masprep.tok.low"
@@ -58,7 +58,7 @@ TGTTRAIN="sw"
 SRCDEV="fra"
 TGTDEV="swc"
 DATASET="swmix"
-preprocess
+#preprocess
 
 #swmix sw-fr
 SRCTRAIN="sw"
@@ -66,7 +66,7 @@ TGTTRAIN="fr"
 SRCDEV="swc"
 TGTDEV="fra"
 DATASET="swmix"
-preprocess
+#preprocess
 
 #mtedmix fr-sw
 CORPUSTRAIN="$CORPORADIR/mix.mted/mtedmix.train.norm.fixel.masprep.tok.low"
