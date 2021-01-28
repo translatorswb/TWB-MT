@@ -104,6 +104,16 @@ TGTDEV="fra"
 DATASET="monomix"
 #preprocess
 
+#toy fra-swc
+CORPUSTRAIN="$CORPORADIR/toy/toy.train.norm.fixel.masprep.tok.low"
+CORPUSDEV="$CORPORADIR/toy/toy.dev.norm.fixel.masprep.tok.low"
+SRCTRAIN="fra"
+TGTTRAIN="swc"
+SRCDEV="fra"
+TGTDEV="swc"
+DATASET="toy"
+preprocess
+
 #ending alert 
 echo -en "\007"
 

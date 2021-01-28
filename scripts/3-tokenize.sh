@@ -72,5 +72,13 @@ SRC="sw"
 TGT="fr"
 tokenize_sets
 
+CORPUS="toy"
+C="toy"
+SETS="train"
+SUFFIX="norm.fixel.masprep"
+SRC="swc"
+TGT="fra"
+tokenize_sets
+
 #ending alert
 echo -en "\007"

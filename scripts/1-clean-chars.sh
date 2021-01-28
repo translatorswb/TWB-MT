@@ -63,5 +63,11 @@ C="test-twbkit"
 LANGS="swc fra"
 clean_text
 
+#Gamayun test kit
+CORPUS="toy"
+C="toy"
+LANGS="swc fra"
+clean_text
+
 #ending alert 
 echo -en "\007"

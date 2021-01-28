@@ -63,5 +63,17 @@ EXCLUDEFROM="src"
 clean_and_split
 rm $CORPORADIR/$CORPUS/$C.dev.*
 
+CORPUS="toy"
+C="toy"
+SRC="swc"
+TGT="fra"
+SUFFIX="norm.fixel"
+DEVSIZE=10
+EXCLUDESETS="$CORPORADIR/test.swc.old/test-old.norm.fixel.swc"
+EXCLUDEFROM="src"
+clean_and_split
+rm $CORPORADIR/$CORPUS/$C.dev.*
+
+
 #ending alert 
 echo -en "\007"
