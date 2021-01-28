@@ -9,7 +9,7 @@ function preprocess() {
 	mkdir -p $DATADIR
 	
 	echo Preparing ONMT dataset $CORPUSTRAIN.$BPEIDSUFFIX
-	
+
 	onmt_preprocess -overwrite -train_src $CORPUSTRAIN.$BPEIDSUFFIX.$SRCTRAIN -train_tgt $CORPUSTRAIN.$BPEIDSUFFIX.$TGTTRAIN -valid_src $CORPUSDEV.$BPEIDSUFFIX.$SRCDEV -valid_tgt $CORPUSDEV.$BPEIDSUFFIX.$TGTDEV -save_data $DATADIR/$DATASET.$SRCTRAIN-$TGTTRAIN.$BPEIDSUFFIX
 }
 
@@ -123,6 +123,26 @@ SRCTRAIN="swc"
 TGTTRAIN="fra"
 SRCDEV="swc"
 TGTDEV="fra"
+DATASET="toy"
+preprocess
+
+#toy fr-sw
+CORPUSTRAIN="$CORPORADIR/toy/toy.train.norm.fixel.masprep.tok.low"
+CORPUSDEV="$CORPORADIR/toy/toy.dev.norm.fixel.masprep.tok.low"
+SRCTRAIN="fr"
+TGTTRAIN="sw"
+SRCDEV="fr"
+TGTDEV="sw"
+DATASET="toy"
+#preprocess
+
+#toy sw-fr
+CORPUSTRAIN="$CORPORADIR/toy/toy.train.norm.fixel.masprep.tok.low"
+CORPUSDEV="$CORPORADIR/toy/toy.dev.norm.fixel.masprep.tok.low"
+SRCTRAIN="sw"
+TGTTRAIN="fr"
+SRCDEV="sw"
+TGTDEV="fr"
 DATASET="toy"
 preprocess
 
