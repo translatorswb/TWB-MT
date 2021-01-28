@@ -6,6 +6,7 @@ CORPORADIR="$FS/../corpora"
 
 #PROCEDURE
 function clean_text() {
+	echo Cleaning $CORPORADIR/$CORPUS
 	for LANG in $LANGS; do
 		python2 $FS/normalize-chars.py -l $LANG < $CORPORADIR/$CORPUS/$C.$LANG > $CORPORADIR/$CORPUS/$C.norm.$LANG
 		python2 $FS/fix-ellipsis.py  < $CORPORADIR/$CORPUS/$C.norm.$LANG > $CORPORADIR/$CORPUS/$C.norm.fixel.$LANG
@@ -38,29 +39,29 @@ C="monomix"
 LANGS="sw fr"
 clean_text
 
-# #old test set
-# CORPUS="test.swc"
-# C="test-old"
-# LANGS="swc fra"
-# clean_text
+#old test set
+CORPUS="test.swc.old"
+C="test-old"
+LANGS="swc fra"
+clean_text
 
-# #tico19 test set
-# CORPUS="test.tico19"
-# C="test-tico19"
-# LANGS="swc fra"
-# clean_text
+#tico19 test set
+CORPUS="test.tico19"
+C="test-tico19"
+LANGS="swc fra"
+clean_text
 
-# #Masakhane's JW300 test set
-# CORPUS="test.jw300"
-# C="test-jw300"
-# LANGS="swc fra"
-# clean_text
+#Masakhane's JW300 test set
+CORPUS="test.jw300"
+C="test-jw300"
+LANGS="swc fra"
+clean_text
 
-# #Gamayun test kit
-# CORPUS="test.kit"
-# C="test-twbkit"
-# LANGS="swc fra"
-# clean_text
+#Gamayun test kit
+CORPUS="test.twbkit"
+C="test-twbkit"
+LANGS="swc fra"
+clean_text
 
 #ending alert 
 echo -en "\007"
