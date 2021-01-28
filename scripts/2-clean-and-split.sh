@@ -18,7 +18,7 @@ SUFFIX="norm.fixel"
 DEVSIZE=500
 EXCLUDESET="$CORPORADIR/test.swc/test.norm.fixel.swc"
 EXCLUDEFROM="src"
-#clean_and_split
+clean_and_split
 
 CORPUS="mix.swc"
 C="swcmix"
@@ -28,18 +28,7 @@ SUFFIX="norm.fixel"
 DEVSIZE=1000
 EXCLUDESET="$CORPORADIR/test.swc/test.norm.fixel.swc"
 EXCLUDEFROM="src"
-#clean_and_split
-
-#CORPUS="mix.sw"
-#C="swmix"
-#SRC="sw"
-#TGT="fr"
-#SUFFIX="norm.fixel"
-#DEVSIZE=0
-#EXCLUDESET="$CORPORADIR/test.swc/test.norm.fixel.swc"
-#EXCLUDEFROM="src"
-#clean_and_split
-#rm $CORPORADIR/$CORPUS/$C.dev.*
+clean_and_split
 
 CORPUS="mix.mted"
 C="mtedmix"
@@ -49,8 +38,8 @@ SUFFIX="norm.fixel"
 DEVSIZE=0
 EXCLUDESET="$CORPORADIR/test.swc/test.norm.fixel.swc"
 EXCLUDEFROM="src"
-#clean_and_split
-#rm $CORPORADIR/$CORPUS/$C.dev.*
+clean_and_split
+rm $CORPORADIR/$CORPUS/$C.dev.*
 
 CORPUS="mix.mono"
 C="monomix"

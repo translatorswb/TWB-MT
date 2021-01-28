@@ -41,6 +41,11 @@ LANGS="sw fr"
 CORPUS="mix.mono"
 C="monomix"
 LANGS="sw fr"
+#clean_text
+
+CORPUS="test.jw300"
+C="test"
+LANGS="swc fr"
 clean_text
 
 #ending alert 
