@@ -112,6 +112,16 @@ TGTTRAIN="swc"
 SRCDEV="fra"
 TGTDEV="swc"
 DATASET="toy"
+#preprocess
+
+#toy swc-fra
+CORPUSTRAIN="$CORPORADIR/toy/toy.train.norm.fixel.masprep.tok.low"
+CORPUSDEV="$CORPORADIR/toy/toy.dev.norm.fixel.masprep.tok.low"
+SRCTRAIN="swc"
+TGTTRAIN="fra"
+SRCDEV="swc"
+TGTDEV="fra"
+DATASET="toy"
 preprocess
 
 #ending alert 
