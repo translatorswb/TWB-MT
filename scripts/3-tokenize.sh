@@ -8,24 +8,30 @@ CORPORADIR="$FS/../corpora"
 #PROCEDURES
 function tokenize_sets() {
 	INDIR=$CORPORADIR/$CORPUS
+	echo Tokenizing $INDIR
 	for SET in $SETS; do
-		perl $MOSESDIR/scripts/tokenizer/tokenizer.perl -q < $INDIR/$C.$SET.$SUFFIX.$SRC > $INDIR/$C.$SET.$SUFFIX.tok.$SRC
-		perl $MOSESDIR/scripts/tokenizer/lowercase.perl -q < $INDIR/$C.$SET.$SUFFIX.tok.$SRC > $INDIR/$C.$SET.$SUFFIX.tok.low.$SRC
+		perl $MOSESDIR/scripts/tokenizer/tokenizer.perl -q -l $MTOKLANG < $INDIR/$C.$SET.$SUFFIX.$SRC > $INDIR/$C.$SET.$SUFFIX.tok.$SRC
+		perl $MOSESDIR/scripts/tokenizer/lowercase.perl -q -l $MTOKLANG < $INDIR/$C.$SET.$SUFFIX.tok.$SRC > $INDIR/$C.$SET.$SUFFIX.tok.low.$SRC
 		
-		perl $MOSESDIR/scripts/tokenizer/tokenizer.perl -q < $INDIR/$C.$SET.$SUFFIX.$TGT > $INDIR/$C.$SET.$SUFFIX.tok.$TGT
-                perl $MOSESDIR/scripts/tokenizer/lowercase.perl -q < $INDIR/$C.$SET.$SUFFIX.tok.$TGT > $INDIR/$C.$SET.$SUFFIX.tok.low.$TGT
+		perl $MOSESDIR/scripts/tokenizer/tokenizer.perl -q -l $MTOKLANG < $INDIR/$C.$SET.$SUFFIX.$TGT > $INDIR/$C.$SET.$SUFFIX.tok.$TGT
+                perl $MOSESDIR/scripts/tokenizer/lowercase.perl -q -l $MTOKLANG < $INDIR/$C.$SET.$SUFFIX.tok.$TGT > $INDIR/$C.$SET.$SUFFIX.tok.low.$TGT
 	done
 }
 
 function tokenize() {
 	INDIR=$CORPORADIR/$CORPUS
-	perl $MOSESDIR/scripts/tokenizer/tokenizer.perl -q < $INDIR/$C.$SUFFIX.$SRC > $INDIR/$C.$SUFFIX.tok.$SRC
-	perl $MOSESDIR/scripts/tokenizer/lowercase.perl -q < $INDIR/$C.$SUFFIX.tok.$SRC > $INDIR/$C.$SUFFIX.tok.low.$SRC
-	perl $MOSESDIR/scripts/tokenizer/tokenizer.perl -q < $INDIR/$C.$SUFFIX.$TGT > $INDIR/$C.$SUFFIX.tok.$TGT
-        perl $MOSESDIR/scripts/tokenizer/lowercase.perl -q < $INDIR/$C.$SUFFIX.tok.$TGT > $INDIR/$C.$SUFFIX.tok.low.$TGT
+
+	echo Tokenizing $INDIR
+
+	perl $MOSESDIR/scripts/tokenizer/tokenizer.perl -q -l $MTOKLANG < $INDIR/$C.$SUFFIX.$SRC > $INDIR/$C.$SUFFIX.tok.$SRC
+	perl $MOSESDIR/scripts/tokenizer/lowercase.perl -q -l $MTOKLANG < $INDIR/$C.$SUFFIX.tok.$SRC > $INDIR/$C.$SUFFIX.tok.low.$SRC
+	perl $MOSESDIR/scripts/tokenizer/tokenizer.perl -q -l $MTOKLANG < $INDIR/$C.$SUFFIX.$TGT > $INDIR/$C.$SUFFIX.tok.$TGT
+        perl $MOSESDIR/scripts/tokenizer/lowercase.perl -q -l $MTOKLANG < $INDIR/$C.$SUFFIX.tok.$TGT > $INDIR/$C.$SUFFIX.tok.low.$TGT
 }
 
 #CALLS
+MTOKLANG="fr"
+
 CORPUS="mix.twb"
 C="twbmix"
 SETS="train dev"
