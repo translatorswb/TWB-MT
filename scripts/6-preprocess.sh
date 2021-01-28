@@ -22,7 +22,7 @@ TGTTRAIN="swc"
 SRCDEV="fra"
 TGTDEV="swc"
 DATASET="twbmix"
-preprocess
+#preprocess
 
 #twbmix swc-fra
 SRCTRAIN="swc"
@@ -30,7 +30,7 @@ TGTTRAIN="fra"
 SRCDEV="swc"
 TGTDEV="fra"
 DATASET="twbmix"
-preprocess
+#preprocess
 
 #swcmix fra-swc
 CORPUSTRAIN="$CORPORADIR/mix.swc/swcmix.train.norm.fixel.masprep.tok.low"
@@ -76,7 +76,7 @@ TGTTRAIN="sw"
 SRCDEV="fra"
 TGTDEV="swc"
 DATASET="mtedmix"
-preprocess
+#preprocess
 
 #mtedmix sw-fr
 SRCTRAIN="sw"
@@ -84,7 +84,7 @@ TGTTRAIN="fr"
 SRCDEV="swc"
 TGTDEV="fra"
 DATASET="mtedmix"
-preprocess
+#preprocess
 
 #monomix fr-sw
 CORPUSTRAIN="$CORPORADIR/mix.mono/monomix.train.norm.fixel.masprep.tok.low"
@@ -94,7 +94,7 @@ TGTTRAIN="sw"
 SRCDEV="fra"
 TGTDEV="swc"
 DATASET="monomix"
-preprocess
+#preprocess
 
 #monomix sw-fr
 SRCTRAIN="sw"
@@ -102,7 +102,7 @@ TGTTRAIN="fr"
 SRCDEV="swc"
 TGTDEV="fra"
 DATASET="monomix"
-preprocess
+#preprocess
 
 #ending alert 
 echo -en "\007"
