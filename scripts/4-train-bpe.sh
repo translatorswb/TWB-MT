@@ -9,6 +9,7 @@ BPEDIR="$FS/../onmt/bpe"
 function train_bpe() {
 	mkdir -p $BPEDIR
 	INDIR=$CORPORADIR/$CORPUS
+	echo Training BPE on $INDIR/$C.$SRC
 	
 	subword-nmt learn-joint-bpe-and-vocab --input $INDIR/$C.$SRC $INDIR/$C.$TGT -s $OPS \
 		-o $BPEDIR/$BPEID-$OPS.codes --write-vocabulary $BPEDIR/$BPEID-$OPS.$SRC.vocab $BPEDIR/$BPEID-$OPS.$TGT.vocab
@@ -26,14 +27,6 @@ TGT="fr"
 BPEID="BPE-mymtedmix"
 OPS=6000
 train_bpe
-
-# CORPUS="mix.mono"
-# C="monomix.train.norm.fixel.masprep.tok.low"
-# SRC="sw"
-# TGT="fr"
-# BPEID="BPE-monomix"
-# OPS=6000
-# train_bpe
 
 #Ending alert
 echo -en "\007"

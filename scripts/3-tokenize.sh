@@ -80,5 +80,9 @@ SRC="swc"
 TGT="fra"
 tokenize_sets
 
+SRC="sw"
+TGT="fr"
+tokenize_sets
+
 #ending alert
 echo -en "\007"

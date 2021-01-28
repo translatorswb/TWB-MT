@@ -11,6 +11,8 @@ function apply_bpe() {
 	VOCABSRC=$BPEDIR/$BPEID.$BPESRC.vocab
 	VOCABTGT=$BPEDIR/$BPEID.$BPETGT.vocab
 
+	echo Applying BPE on $CORPUS/$C.$SUFFIX
+
 	subword-nmt apply-bpe -c $BPE --vocabulary $VOCABSRC < $CORPORADIR/$CORPUS/$C.$SUFFIX.$SRC > $CORPORADIR/$CORPUS/$C.$SUFFIX.$BPEID.$SRC
 	subword-nmt apply-bpe -c $BPE --vocabulary $VOCABTGT < $CORPORADIR/$CORPUS/$C.$SUFFIX.$TGT > $CORPORADIR/$CORPUS/$C.$SUFFIX.$BPEID.$TGT
 }
@@ -21,6 +23,8 @@ function apply_bpe_to_sets() {
 	VOCABTGT=$BPEDIR/$BPEID.$BPETGT.vocab
 
 	for SET in $SETS; do
+		echo Applying BPE on $CORPUS/$C.$SET.$SUFFIX
+
 		subword-nmt apply-bpe -c $BPE --vocabulary $VOCABSRC < $CORPORADIR/$CORPUS/$C.$SET.$SUFFIX.$SRC > $CORPORADIR/$CORPUS/$C.$SET.$SUFFIX.$BPEID.$SRC
 		subword-nmt apply-bpe -c $BPE --vocabulary $VOCABTGT < $CORPORADIR/$CORPUS/$C.$SET.$SUFFIX.$TGT > $CORPORADIR/$CORPUS/$C.$SET.$SUFFIX.$BPEID.$TGT
 	done

@@ -8,6 +8,8 @@ DATADIR="$FS/../onmt/data"
 function preprocess() {
 	mkdir -p $DATADIR
 	
+	echo Preparing ONMT dataset $CORPUSTRAIN.$BPEIDSUFFIX
+	
 	onmt_preprocess -overwrite -train_src $CORPUSTRAIN.$BPEIDSUFFIX.$SRCTRAIN -train_tgt $CORPUSTRAIN.$BPEIDSUFFIX.$TGTTRAIN -valid_src $CORPUSDEV.$BPEIDSUFFIX.$SRCDEV -valid_tgt $CORPUSDEV.$BPEIDSUFFIX.$TGTDEV -save_data $DATADIR/$DATASET.$SRCTRAIN-$TGTTRAIN.$BPEIDSUFFIX
 }
 
