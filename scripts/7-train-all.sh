@@ -1,10 +1,11 @@
 TRAINID="TOY"
 BPEID="BPE-mymtedmix-6000"
 echo Training setup $TRAINID
-bash 7a-train-step1.sh $TRAINID BPE-mymtedmix-6000 toy swc fra 5 5
+bash 7a-train-step1.sh $TRAINID BPE-mymtedmix-6000 toy sw fr 5 5
 echo 
-bash 7b-train-step2.sh $TRAINID BPE-mymtedmix-6000 toy swc fra 5 5 $TRAINID-swc-fra-generic-s001
+bash 7b-train-step2.sh $TRAINID BPE-mymtedmix-6000 toy swc fra 5 5 generic-s001 sw fr
 echo
+bash 7c-train-step3.sh $TRAINID BPE-mymtedmix-6000 toy swc fra 5 5 inswc-s001-i001 swc fra
 
 # TRAINID="A"
 # BPEID="BPE-mymtedmix-6000"

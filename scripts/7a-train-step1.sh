@@ -33,6 +33,9 @@ function do_train() {
     BESTMODEL=$MODELDIR/$MODELNAME/${MODELNAME}_step_${BESTSTEP}.pt
     echo $BESTMODEL
     ln -sf $BESTMODEL $MODELDIR/$MODELNAME/${MODELNAME}_best.pt
+
+    #For debug
+    # touch $MODELDIR/$MODELNAME/${MODELNAME}_best.pt
 }
 
 #PARAMETERS
