@@ -36,7 +36,7 @@ preprocess
 
 #swcmix fra-swc
 CORPUSTRAIN="$CORPORADIR/mix.swc/swcmix.train.norm.fixel.masprep.tok.low"
-CORPUSDEV="$CORPORADIR/mix.swc/swcmix.dev.norm.fixel.masprep.tok.low"
+CORPUSDEV="$CORPORADIR/mix.twb/twbmix.dev.norm.fixel.masprep.tok.low"
 SRCTRAIN="fra"
 TGTTRAIN="swc"
 SRCDEV="fra"
@@ -54,7 +54,7 @@ preprocess
 
 #swmix fr-sw
 CORPUSTRAIN="$CORPORADIR/mix.sw/swmix.train.norm.fixel.masprep.tok.low"
-CORPUSDEV="$CORPORADIR/mix.swc/swcmix.dev.norm.fixel.masprep.tok.low"
+CORPUSDEV="$CORPORADIR/mix.twb/twbmix.dev.norm.fixel.masprep.tok.low"
 SRCTRAIN="fr"
 TGTTRAIN="sw"
 SRCDEV="fra"
@@ -72,7 +72,7 @@ preprocess
 
 #mtedmix fr-sw
 CORPUSTRAIN="$CORPORADIR/mix.mted/mtedmix.train.norm.fixel.masprep.tok.low"
-CORPUSDEV="$CORPORADIR/mix.swc/swcmix.dev.norm.fixel.masprep.tok.low"
+CORPUSDEV="$CORPORADIR/mix.twb/twbmix.dev.norm.fixel.masprep.tok.low"
 SRCTRAIN="fr"
 TGTTRAIN="sw"
 SRCDEV="fra"
@@ -90,13 +90,13 @@ preprocess
 
 #monomix fr-sw
 CORPUSTRAIN="$CORPORADIR/mix.mono/monomix.train.norm.fixel.masprep.tok.low"
-CORPUSDEV="$CORPORADIR/mix.swc/swcmix.dev.norm.fixel.masprep.tok.low"
+CORPUSDEV="$CORPORADIR/mix.twb/twbmix.dev.norm.fixel.masprep.tok.low"
 SRCTRAIN="fr"
 TGTTRAIN="sw"
 SRCDEV="fra"
 TGTDEV="swc"
 DATASET="monomix"
-#preprocess
+preprocess
 
 #monomix sw-fr
 SRCTRAIN="sw"
@@ -104,47 +104,47 @@ TGTTRAIN="fr"
 SRCDEV="swc"
 TGTDEV="fra"
 DATASET="monomix"
-#preprocess
-
-#toy fra-swc
-CORPUSTRAIN="$CORPORADIR/toy/toy.train.norm.fixel.masprep.tok.low"
-CORPUSDEV="$CORPORADIR/toy/toy.dev.norm.fixel.masprep.tok.low"
-SRCTRAIN="fra"
-TGTTRAIN="swc"
-SRCDEV="fra"
-TGTDEV="swc"
-DATASET="toy"
-#preprocess
-
-#toy swc-fra
-CORPUSTRAIN="$CORPORADIR/toy/toy.train.norm.fixel.masprep.tok.low"
-CORPUSDEV="$CORPORADIR/toy/toy.dev.norm.fixel.masprep.tok.low"
-SRCTRAIN="swc"
-TGTTRAIN="fra"
-SRCDEV="swc"
-TGTDEV="fra"
-DATASET="toy"
 preprocess
 
-#toy fr-sw
-CORPUSTRAIN="$CORPORADIR/toy/toy.train.norm.fixel.masprep.tok.low"
-CORPUSDEV="$CORPORADIR/toy/toy.dev.norm.fixel.masprep.tok.low"
-SRCTRAIN="fr"
-TGTTRAIN="sw"
-SRCDEV="fr"
-TGTDEV="sw"
-DATASET="toy"
-#preprocess
+# #toy fra-swc
+# CORPUSTRAIN="$CORPORADIR/toy/toy.train.norm.fixel.masprep.tok.low"
+# CORPUSDEV="$CORPORADIR/toy/toy.dev.norm.fixel.masprep.tok.low"
+# SRCTRAIN="fra"
+# TGTTRAIN="swc"
+# SRCDEV="fra"
+# TGTDEV="swc"
+# DATASET="toy"
+# #preprocess
 
-#toy sw-fr
-CORPUSTRAIN="$CORPORADIR/toy/toy.train.norm.fixel.masprep.tok.low"
-CORPUSDEV="$CORPORADIR/toy/toy.dev.norm.fixel.masprep.tok.low"
-SRCTRAIN="sw"
-TGTTRAIN="fr"
-SRCDEV="sw"
-TGTDEV="fr"
-DATASET="toy"
-preprocess
+# #toy swc-fra
+# CORPUSTRAIN="$CORPORADIR/toy/toy.train.norm.fixel.masprep.tok.low"
+# CORPUSDEV="$CORPORADIR/toy/toy.dev.norm.fixel.masprep.tok.low"
+# SRCTRAIN="swc"
+# TGTTRAIN="fra"
+# SRCDEV="swc"
+# TGTDEV="fra"
+# DATASET="toy"
+# preprocess
+
+# #toy fr-sw
+# CORPUSTRAIN="$CORPORADIR/toy/toy.train.norm.fixel.masprep.tok.low"
+# CORPUSDEV="$CORPORADIR/toy/toy.dev.norm.fixel.masprep.tok.low"
+# SRCTRAIN="fr"
+# TGTTRAIN="sw"
+# SRCDEV="fr"
+# TGTDEV="sw"
+# DATASET="toy"
+# #preprocess
+
+# #toy sw-fr
+# CORPUSTRAIN="$CORPORADIR/toy/toy.train.norm.fixel.masprep.tok.low"
+# CORPUSDEV="$CORPORADIR/toy/toy.dev.norm.fixel.masprep.tok.low"
+# SRCTRAIN="sw"
+# TGTTRAIN="fr"
+# SRCDEV="sw"
+# TGTDEV="fr"
+# DATASET="toy"
+# preprocess
 
 #ending alert 
 echo -en "\007"

@@ -15,7 +15,7 @@ C="twbmix"
 SRC="swc"
 TGT="fra"
 SUFFIX="norm.fixel"
-DEVSIZE=500
+DEVSIZE=1000
 EXCLUDESETS="$CORPORADIR/test.swc.old/test-old.norm.fixel.swc $CORPORADIR/test.tico19/test-tico19.norm.fixel.swc $CORPORADIR/test.twbkit/test-twbkit.swc"
 EXCLUDEFROM="src"
 clean_and_split
@@ -25,10 +25,11 @@ C="swcmix"
 SRC="swc"
 TGT="fra"
 SUFFIX="norm.fixel"
-DEVSIZE=1000
+DEVSIZE=0
 EXCLUDESETS="$CORPORADIR/test.swc.old/test-old.norm.fixel.swc $CORPORADIR/test.tico19/test-tico19.norm.fixel.swc $CORPORADIR/test.twbkit/test-twbkit.swc $CORPORADIR/mix.twb/twbmix.dev.norm.fixel.masprep.swc $CORPORADIR/test.jw300/test-jw300.swc"
 EXCLUDEFROM="src"
 clean_and_split
+rm $CORPORADIR/$CORPUS/$C.dev.*
 
 CORPUS="mix.sw"
 C="swmix"
@@ -36,7 +37,7 @@ SRC="sw"
 TGT="fr"
 SUFFIX="norm.fixel"
 DEVSIZE=0
-EXCLUDESETS="$CORPORADIR/test.swc.old/test-old.norm.fixel.swc $CORPORADIR/test.tico19/test-tico19.norm.fixel.swc $CORPORADIR/test.twbkit/test-twbkit.swc $CORPORADIR/mix.twb/twbmix.dev.norm.fixel.masprep.swc $CORPORADIR/test.jw300/test-jw300.swc $CORPORADIR/mix.swc/swcmix.dev.norm.fixel.masprep.swc"
+EXCLUDESETS="$CORPORADIR/test.swc.old/test-old.norm.fixel.swc $CORPORADIR/test.tico19/test-tico19.norm.fixel.swc $CORPORADIR/test.twbkit/test-twbkit.swc $CORPORADIR/mix.twb/twbmix.dev.norm.fixel.masprep.swc $CORPORADIR/test.jw300/test-jw300.swc"
 EXCLUDEFROM="src"
 clean_and_split
 rm $CORPORADIR/$CORPUS/$C.dev.*
@@ -47,7 +48,7 @@ SRC="sw"
 TGT="fr"
 SUFFIX="norm.fixel"
 DEVSIZE=0
-EXCLUDESETS="$CORPORADIR/test.swc.old/test-old.norm.fixel.swc $CORPORADIR/test.tico19/test-tico19.norm.fixel.swc $CORPORADIR/test.twbkit/test-twbkit.swc $CORPORADIR/mix.twb/twbmix.dev.norm.fixel.masprep.swc $CORPORADIR/test.jw300/test-jw300.swc $CORPORADIR/mix.swc/swcmix.dev.norm.fixel.masprep.swc"
+EXCLUDESETS="$CORPORADIR/test.swc.old/test-old.norm.fixel.swc $CORPORADIR/test.tico19/test-tico19.norm.fixel.swc $CORPORADIR/test.twbkit/test-twbkit.swc $CORPORADIR/mix.twb/twbmix.dev.norm.fixel.masprep.swc $CORPORADIR/test.jw300/test-jw300.swc"
 EXCLUDEFROM="src"
 clean_and_split
 rm $CORPORADIR/$CORPUS/$C.dev.*
@@ -58,7 +59,7 @@ SRC="sw"
 TGT="fr"
 SUFFIX="norm.fixel"
 DEVSIZE=0
-EXCLUDESETS="$CORPORADIR/test.swc.old/test-old.norm.fixel.swc $CORPORADIR/test.tico19/test-tico19.norm.fixel.swc $CORPORADIR/test.twbkit/test-twbkit.swc $CORPORADIR/mix.twb/twbmix.dev.norm.fixel.masprep.swc $CORPORADIR/test.jw300/test-jw300.swc $CORPORADIR/mix.swc/swcmix.dev.norm.fixel.masprep.swc"
+EXCLUDESETS="$CORPORADIR/test.swc.old/test-old.norm.fixel.swc $CORPORADIR/test.tico19/test-tico19.norm.fixel.swc $CORPORADIR/test.twbkit/test-twbkit.swc $CORPORADIR/mix.twb/twbmix.dev.norm.fixel.masprep.swc $CORPORADIR/test.jw300/test-jw300.swc"
 EXCLUDEFROM="src"
 clean_and_split
 rm $CORPORADIR/$CORPUS/$C.dev.*

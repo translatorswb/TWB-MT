@@ -42,7 +42,7 @@ tokenize_sets
 
 CORPUS="mix.swc"
 C="swcmix"
-SETS="train dev"
+SETS="train"
 SUFFIX="norm.fixel.masprep"
 SRC="swc"
 TGT="fra"
