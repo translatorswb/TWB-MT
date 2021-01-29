@@ -45,7 +45,9 @@ function do_train() {
     BESTSTEP=`cat $LOGDIR/train-$MODELNAME.log | grep "Best model found at step" | rev | cut -d' ' -f1 | rev`
     BESTMODEL=$MODELDIR/$MODELNAME/${MODELNAME}_step_${BESTSTEP}.pt
     echo Best model: $BESTMODEL
-    ln -sf $BESTMODEL $MODELDIR/$MODELNAME/${MODELNAME}_best.pt
+    #ln -sf $BESTMODEL $MODELDIR/$MODELNAME/${MODELNAME}_best.pt
+    mv $BESTMODEL $MODELDIR/$MODELNAME/${MODELNAME}_best_step_${BESTSTEP}.pt
+    rm $MODELDIR/$MODELNAME/${MODELNAME}_step_*
 
     #For debug
     # touch $MODELDIR/$MODELNAME/${MODELNAME}_best.pt
