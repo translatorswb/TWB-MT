@@ -63,16 +63,16 @@ C="test-twbkit"
 LANGS="swc fra"
 clean_text
 
-#Toy corpus
-CORPUS="toy"
-C="toy"
-LANGS="swc fra"
-clean_text
+# #Toy corpus
+# CORPUS="toy"
+# C="toy"
+# LANGS="swc fra"
+# clean_text
 
-CORPUS="toy"
-C="toy"
-LANGS="sw fr"
-clean_text
+# CORPUS="toy"
+# C="toy"
+# LANGS="sw fr"
+# clean_text
 
 #ending alert 
 echo -en "\007"

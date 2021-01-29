@@ -14,7 +14,7 @@ function preprocess() {
 }
 
 #CALLS
-BPEIDSUFFIX="BPE-mymtedmix-6000"
+BPEIDSUFFIX="BPE-fullmix-6000"
 
 #twbmix fra-swc
 CORPUSTRAIN="$CORPORADIR/mix.twb/twbmix.train.norm.fixel.masprep.tok.low"
@@ -24,7 +24,7 @@ TGTTRAIN="swc"
 SRCDEV="fra"
 TGTDEV="swc"
 DATASET="twbmix"
-#preprocess
+preprocess
 
 #twbmix swc-fra
 SRCTRAIN="swc"
@@ -32,7 +32,7 @@ TGTTRAIN="fra"
 SRCDEV="swc"
 TGTDEV="fra"
 DATASET="twbmix"
-#preprocess
+preprocess
 
 #swcmix fra-swc
 CORPUSTRAIN="$CORPORADIR/mix.swc/swcmix.train.norm.fixel.masprep.tok.low"
@@ -42,7 +42,7 @@ TGTTRAIN="swc"
 SRCDEV="fra"
 TGTDEV="swc"
 DATASET="swcmix"
-#preprocess
+preprocess
 
 #swcmix swc-fra
 SRCTRAIN="swc"
@@ -50,7 +50,7 @@ TGTTRAIN="fra"
 SRCDEV="swc"
 TGTDEV="fra"
 DATASET="swcmix"
-#preprocess
+preprocess
 
 #swmix fr-sw
 CORPUSTRAIN="$CORPORADIR/mix.sw/swmix.train.norm.fixel.masprep.tok.low"
@@ -60,7 +60,7 @@ TGTTRAIN="sw"
 SRCDEV="fra"
 TGTDEV="swc"
 DATASET="swmix"
-#preprocess
+preprocess
 
 #swmix sw-fr
 SRCTRAIN="sw"
@@ -68,7 +68,7 @@ TGTTRAIN="fr"
 SRCDEV="swc"
 TGTDEV="fra"
 DATASET="swmix"
-#preprocess
+preprocess
 
 #mtedmix fr-sw
 CORPUSTRAIN="$CORPORADIR/mix.mted/mtedmix.train.norm.fixel.masprep.tok.low"
@@ -78,7 +78,7 @@ TGTTRAIN="sw"
 SRCDEV="fra"
 TGTDEV="swc"
 DATASET="mtedmix"
-#preprocess
+preprocess
 
 #mtedmix sw-fr
 SRCTRAIN="sw"
@@ -86,7 +86,7 @@ TGTTRAIN="fr"
 SRCDEV="swc"
 TGTDEV="fra"
 DATASET="mtedmix"
-#preprocess
+preprocess
 
 #monomix fr-sw
 CORPUSTRAIN="$CORPORADIR/mix.mono/monomix.train.norm.fixel.masprep.tok.low"

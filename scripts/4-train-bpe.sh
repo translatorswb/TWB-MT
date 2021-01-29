@@ -24,7 +24,7 @@ CORPUS="mix.mted"
 C="mtedmix.train.norm.fixel.masprep.tok.low"
 SRC="sw"
 TGT="fr"
-BPEID="BPE-mymtedmix"
+BPEID="BPE-fullmix"
 OPS=6000
 train_bpe
 

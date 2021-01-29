@@ -8,7 +8,7 @@
 # bash 7c-train-step3.sh $TRAINID BPE-mymtedmix-6000 toy swc fra 5 5 inswc-s001-i001 swc fra
 
 TRAINID="A"
-BPEID="BPE-mymtedmix-6000"
+BPEID="BPE-fullmix-6000"
 echo Training setup $TRAINID
 echo
 bash 7a-train-step1.sh $TRAINID BPE-mymtedmix-6000 swcmix swc fra 2048 1500

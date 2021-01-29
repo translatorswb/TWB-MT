@@ -19,7 +19,7 @@ function do_train() {
 
     BASEMODELPATH=`ls $MODELDIR/$BASEMODELNAME/${BASEMODELNAME}_best_*`
     if test -f "$BASEMODELPATH"; then
-        echo "Basemodel in its place"
+        echo "Basemodel: $BASEMODELPATH"
     else 
         echo "Basemodel NOT FOUND! $BASEMODELPATH"
         exit 0

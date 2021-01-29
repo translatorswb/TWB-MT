@@ -33,7 +33,7 @@ function apply_bpe_to_sets() {
 #CALLS
 
 #BPE mtedmix
-BPEID="BPE-mymtedmix-6000"
+BPEID="BPE-fullmix-6000"
 BPESRC="sw"
 BPETGT="fr"
 
@@ -43,14 +43,7 @@ SUFFIX="norm.fixel.masprep.tok.low"
 SETS="train dev"
 SRC="swc"
 TGT="fra"
-#apply_bpe_to_sets
-
-# CORPUS="test.swc"
-# C="test"
-# SUFFIX="norm.fixel.tok.low"
-# SRC="swc"
-# TGT="fra"
-# apply_bpe
+apply_bpe_to_sets
 
 CORPUS="mix.swc"
 C="swcmix"
@@ -58,7 +51,7 @@ SUFFIX="norm.fixel.masprep.tok.low"
 SETS="train dev"
 SRC="swc"
 TGT="fra"
-#apply_bpe_to_sets
+apply_bpe_to_sets
 
 CORPUS="mix.sw"
 C="swmix"
@@ -66,7 +59,7 @@ SUFFIX="norm.fixel.masprep.tok.low"
 SETS="train"
 SRC="sw"
 TGT="fr"
-#apply_bpe_to_sets
+apply_bpe_to_sets
 
 CORPUS="mix.mted"
 C="mtedmix"
@@ -74,7 +67,7 @@ SUFFIX="norm.fixel.masprep.tok.low"
 SETS="train"
 SRC="sw"
 TGT="fr"
-#apply_bpe_to_sets
+apply_bpe_to_sets
 
 CORPUS="mix.mono"
 C="monomix"
@@ -82,7 +75,7 @@ SUFFIX="norm.fixel.masprep.tok.low"
 SETS="train"
 SRC="sw"
 TGT="fr"
-#apply_bpe_to_sets
+apply_bpe_to_sets
 
 CORPUS="toy"
 C="toy"
