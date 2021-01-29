@@ -48,7 +48,7 @@ apply_bpe_to_sets
 CORPUS="mix.swc"
 C="swcmix"
 SUFFIX="norm.fixel.masprep.tok.low"
-SETS="train dev"
+SETS="train"
 SRC="swc"
 TGT="fra"
 apply_bpe_to_sets
