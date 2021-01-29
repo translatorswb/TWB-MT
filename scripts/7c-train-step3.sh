@@ -15,21 +15,20 @@ function do_train() {
     MODELNAME=$MODELPREFIX-$MODELSRC-$MODELTGT-$MODELTYPE-$BASEMODELID-$MODELID
 
     echo Training $MODELNAME on $BASEMODELNAME
-    echo using dataset: $DATASET.$BPEID
+    echo Using dataset: $DATASET.$BPEID
+
+    BASEMODELPATH=`ls $MODELDIR/$BASEMODELNAME/${MODELNAME}_best_*`
+    if test -f "$BASEMODELPATH"; then
+        echo "Basemodel in its place"
+    else 
+        echo "Basemodel NOT FOUND! $BASEMODELPATH"
+        exit 0
+    fi
 
     mkdir -p $MODELDIR/$MODELNAME
     mkdir -p $LOGDIR
 
-    #For debug
-    # echo "BASE: $BASEMODELNAME/${BASEMODELNAME}_best.pt"
-    if test -f "$MODELDIR/$BASEMODELNAME/${BASEMODELNAME}_best.pt"; then
-        echo "Basemodel in its place"
-    else 
-        echo "Basemodel NOT FOUND!"
-        exit 0
-    fi
-
-    onmt_train -data $DATADIR/$DATASET.$BPEID -train_from $MODELDIR/$BASEMODELNAME/${BASEMODELNAME}_best.pt \
+    onmt_train -data $DATADIR/$DATASET.$BPEID -train_from $BASEMODELPATH \
             -save_model $MODELDIR/$MODELNAME/$MODELNAME \
             -layers 6 -rnn_size 512 -word_vec_size 512 -transformer_ff 2048 -heads 8  \
             -encoder_type transformer -decoder_type transformer -position_encoding \
@@ -41,13 +40,12 @@ function do_train() {
         -valid_steps $VALIDSAVE -save_checkpoint_steps $VALIDSAVE -report_every $REPORT \
         -world_size 2 -gpu_ranks 0 1 > $LOGDIR/train-$MODELNAME.log 2>&1
     
-    #Make a symlink to best model
+    #Mark best model
     BESTSTEP=`cat $LOGDIR/train-$MODELNAME.log | grep "Best model found at step" | rev | cut -d' ' -f1 | rev`
     BESTMODEL=$MODELDIR/$MODELNAME/${MODELNAME}_step_${BESTSTEP}.pt
     echo Best model: $BESTMODEL
-    #ln -sf $BESTMODEL $MODELDIR/$MODELNAME/${MODELNAME}_best.pt
     mv $BESTMODEL $MODELDIR/$MODELNAME/${MODELNAME}_best_step_${BESTSTEP}.pt
-    rm $MODELDIR/$MODELNAME/${MODELNAME}_step_*
+    rm $MODELDIR/$MODELNAME/${MODELNAME}_step_* #Comment out if you want to keep non-best models
 
     #For debug
     # touch $MODELDIR/$MODELNAME/${MODELNAME}_best.pt

@@ -12,7 +12,7 @@ SEED="42"
 function do_train() {
     MODELNAME=$MODELPREFIX-$MODELSRC-$MODELTGT-$MODELTYPE-$MODELID
     echo Training $MODELNAME
-    echo using dataset: $DATASET.$BPEID
+    echo Using dataset: $DATASET.$BPEID
 
     mkdir -p $MODELDIR/$MODELNAME
     mkdir -p $LOGDIR
@@ -29,13 +29,12 @@ function do_train() {
            -valid_steps $VALIDSAVE -save_checkpoint_steps $VALIDSAVE  -report_every $REPORT \
            -world_size 2 -gpu_ranks 0 1 > $LOGDIR/train-$MODELNAME.log 2>&1
 
-    #Make a symlink to best model
+    #Mark best model
     BESTSTEP=`cat $LOGDIR/train-$MODELNAME.log | grep "Best model found at step" | rev | cut -d' ' -f1 | rev`
     BESTMODEL=$MODELDIR/$MODELNAME/${MODELNAME}_step_${BESTSTEP}.pt
     echo Best model: $BESTMODEL
-    #ln -sf $BESTMODEL $MODELDIR/$MODELNAME/${MODELNAME}_best.pt
     mv $BESTMODEL $MODELDIR/$MODELNAME/${MODELNAME}_best_step_${BESTSTEP}.pt
-    rm $MODELDIR/$MODELNAME/${MODELNAME}_step_*
+    rm $MODELDIR/$MODELNAME/${MODELNAME}_step_* #Comment out if you want to keep non-best models
 
     #For debug
     # touch $MODELDIR/$MODELNAME/${MODELNAME}_best.pt
