@@ -17,7 +17,7 @@ function do_train() {
     echo Training $MODELNAME on $BASEMODELNAME
     echo Using dataset: $DATASET.$BPEID
 
-    BASEMODELPATH=`ls $MODELDIR/$BASEMODELNAME/${MODELNAME}_best_*`
+    BASEMODELPATH=`ls $MODELDIR/$BASEMODELNAME/${BASEMODELNAME}_best_*`
     if test -f "$BASEMODELPATH"; then
         echo "Basemodel in its place"
     else 
