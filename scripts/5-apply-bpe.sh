@@ -33,7 +33,7 @@ function apply_bpe_to_sets() {
 #CALLS
 
 #BPE mtedmix
-BPEID="BPE-fullmix-6000"
+BPEID="BPE-fixmix-6000"
 BPESRC="sw"
 BPETGT="fr"
 

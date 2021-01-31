@@ -14,7 +14,7 @@ function preprocess() {
 }
 
 #CALLS
-BPEIDSUFFIX="BPE-fullmix-6000"
+BPEIDSUFFIX="BPE-fixmix-6000"
 
 #twbmix fra-swc
 CORPUSTRAIN="$CORPORADIR/mix.twb/twbmix.train.norm.fixel.masprep.tok.low"
