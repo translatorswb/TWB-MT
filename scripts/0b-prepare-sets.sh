@@ -48,8 +48,8 @@ CORPUS="mix.sw"
 C="swmix"
 SRC="sw"
 TGT="fr"
-SRCSETS="GlobalVoices/GlobalVoices.fr-sw.sw jw300.sw/jw300.sw Tanzil/Tanzil.fr-sw.sw twbtm.sw/twb_sw-fr_sw.txt Multiparacrawl/MultiParaCrawl.fr-sw.sw Wikimatrix/WikiMatrix.fr-sw.sw TED2020/TED2020.fr-sw.sw mix.swc/swcmix.swc"
-TGTSETS="GlobalVoices/GlobalVoices.fr-sw.fr jw300.sw/jw300.fr Tanzil/Tanzil.fr-sw.fr twbtm.sw/twb_sw-fr_fr.txt Multiparacrawl/MultiParaCrawl.fr-sw.fr Wikimatrix/WikiMatrix.fr-sw.fr TED2020/TED2020.fr-sw.fr mix.swc/swcmix.fra"
+SRCSETS="GlobalVoices/GlobalVoices.fr-sw.sw jw300.sw/jw300.sw Tanzil/Tanzil.fr-sw.sw twbtm.sw/twb_sw-fr_sw.txt Multiparacrawl/MultiParaCrawl.fr-sw.sw Wikimatrix/WikiMatrix.fr-sw.sw TED2020/TED2020.fr-sw.sw tico19.sw-fr/tico19.sw-fr.nontest.sw mix.swc/swcmix.swc"
+TGTSETS="GlobalVoices/GlobalVoices.fr-sw.fr jw300.sw/jw300.fr Tanzil/Tanzil.fr-sw.fr twbtm.sw/twb_sw-fr_fr.txt Multiparacrawl/MultiParaCrawl.fr-sw.fr Wikimatrix/WikiMatrix.fr-sw.fr TED2020/TED2020.fr-sw.fr tico19.sw-fr/tico19.sw-fr.nontest.fr mix.swc/swcmix.fra"
 mix_sets
 
 CORPUS="mix.mted"
