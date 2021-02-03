@@ -1,23 +1,21 @@
-# #CALLS
-# BPEID="BPE-fixmix-6000"
-# SRC="swc"
-# TGT="fra"
-# CORPUS="toy"
-# C="toy"
-# MODELNAME="A-fra-swc-generic-s001"
-# do_eval
-
-
 BPEID=BPE-fixmix-6000
 
 TRAINID=A
-echo ------ Evaluating setup $TRAINID -------
+printf "===== Evaluating setup $TRAINID =====\n"
+
 CORPUS=test.swc.old
 C=test-old
 SRC=swc
 TGT=fra
-echo TEST SET: $CORPUS
+printf "TEST SET: $CORPUS\n"
 
-bash 8a-inference.sh $TRAINID generic-s001 $BPEID test.swc.old test-old swc fra
-bash 8b-evaluate.sh $TRAINID generic-s001 test.swc.old test-old swc fra
+MODELTAG=generic-s001
+printf "MODEL: $TRAINID-$MODELTAG\n"
 
+printf "$SRC->$TGT\n"
+bash 8a-inference.sh $TRAINID $MODELTAG $BPEID $CORPUS $C $SRC $TGT
+bash 8b-evaluate.sh $TRAINID $MODELTAG $CORPUS $C $SRC $TGT
+
+printf "\n$TGT->$SRC\n"
+bash 8a-inference.sh $TRAINID $MODELTAG $BPEID $CORPUS $C $TGT $SRC
+bash 8b-evaluate.sh $TRAINID $MODELTAG $CORPUS $C $TGT $SRC
