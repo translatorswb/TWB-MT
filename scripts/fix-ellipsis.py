@@ -14,7 +14,7 @@ output = sys.stdout
 file_name = ""
 
 def help():
-  print """\
+  print("""\
   Usage: {0} [options] [input [output]]
   Optional parameters:
     input                input file
@@ -22,12 +22,12 @@ def help():
   Options:
     -s, --stats file     file to store a csv with the stats
     -h, --help           shows this help
-    """.format(os.path.basename(sys.argv[0]))
+    """.format(os.path.basename(sys.argv[0])))
 
 # Parse options
 try:
   opts, args = getopt.getopt(sys.argv[1:], "s:h", ["stats=","help"])
-except getopt.GetoptError, err:
+except getopt.GetoptError as err:
   help()
   sys.exit(2)
 
@@ -102,7 +102,7 @@ ellipsis_absense_blank_between_alnum = regex.compile(u'(?P<start>[[:alnum:]])[.]
 count_ellipsis_absense_blank_between_alnum = 0
 
 for line in input:
-  line=line.rstrip("\n").decode("utf-8")
+  line=line.rstrip("\n")#.decode("utf-8")
 
   line=ellipsis_simplify.sub("...",line)
 
@@ -143,7 +143,7 @@ for line in input:
   line, nmatches = ellipsis_absense_blank_between_alnum.subn("\g<start>... \g<end>", line)
   count_ellipsis_absense_blank_between_alnum += nmatches
 
-  output.write(u"{0}\n".format(line.strip()).encode("utf-8"))
+  output.write(u"{0}\n".format(line.strip()))
 
 
 if filestats != "":

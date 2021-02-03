@@ -7,7 +7,7 @@ import os
 import csv
 
 def help():
-  print """Usage: {0} [options] [input [output]]
+  print("""Usage: {0} [options] [input [output]]
   Optional parameters:
     input                input file
     output               output file
@@ -15,7 +15,7 @@ def help():
     -s, --stats=file     file to store a csv with the stats
     -l, --language=lang  language of the file
     -h, --help           shows this help
-    """.format(os.path.basename(sys.argv[0]))
+    """.format(os.path.basename(sys.argv[0])))
 
 # remove annoying characters
 chars = {
@@ -530,7 +530,7 @@ def main():
   # Parse options
   try:
     opts, args = getopt.getopt(sys.argv[1:], "s:hl:", ["stats=","lang=","language=","help"])
-  except getopt.GetoptError, err:
+  except getopt.GetoptError as err:
     help()
     sys.exit(2)
 
@@ -796,7 +796,7 @@ def main():
   #Compile regular expressions only once
 
   #Replace all html entities
-  htmlEntity=regex.compile(ur'[&][[:space:]]*[#][[:space:]]*[0-9]{2,4}[[:space:]]*[;]?',regex.U)
+  htmlEntity=regex.compile(r'[&][[:space:]]*[#][[:space:]]*[0-9]{2,4}[[:space:]]*[;]?',regex.U)
   allControlCharsRe=re.compile("[\x00-\x09\x0B-\x1F]")
   charsRe=re.compile("(\\" + '|\\'.join(chars.keys()) + ")")
   chars3Re=re.compile("\xee\x80[\x80-\xff]|\xee[\x81-\xff][\x00-\xff]|\xef[\x00-\xbe][\x00-\xff]|\xef\xbf[\x00-\xe7]")
