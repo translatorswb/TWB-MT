@@ -3,6 +3,7 @@
 FS="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 CORPORADIR="$FS/../corpora"
 DATADIR="$FS/../onmt/data"
+BPEDIR="$FS/../onmt/bpe"
 MODELDIR="$FS/../onmt/models"
 TESTDIR="$FS/../onmt/test"
 EVALDIR="$FS/../onmt/eval"
@@ -17,9 +18,9 @@ function do_test() {
 	INFERENCEOUT=$C.$SRC.inf-$MODELNAME.$TGT
 	EVALOUT=$INFERENCEOUT.results.txt
 
-	echo bash $FS/translator.sh $CORPORADIR/$CORPUS/$C.$SRC $CORPORADIR/$CORPUS/$INFERENCEOUT $MODELPATH $BPE
+	bash $FS/translator.sh $CORPORADIR/$CORPUS/$C.$SRC $CORPORADIR/$CORPUS/$INFERENCEOUT $MODELPATH $BPE
 	
-	echo cat $CORPORADIR/$CORPUS/$INFERENCEOUT | sacrebleu $CORPORADIR/$CORPUS/$C.$TGT -tok none --metrics {bleu,chrf} | tee $EVALDIR/$EVALOUT
+	cat $CORPORADIR/$CORPUS/$INFERENCEOUT | sacrebleu $CORPORADIR/$CORPUS/$C.$TGT -tok none --metrics {bleu,chrf} | tee $EVALDIR/$EVALOUT
 }
 
 
@@ -29,7 +30,7 @@ SRC="swc"
 TGT="fra"
 CORPUS="toy"
 C="toy"
-MODELNAME="TOY-fr-sw-generic-s001"
+MODELNAME="A-fra-swc-generic-s001"
 do_test
 
 
