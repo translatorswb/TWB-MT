@@ -1,0 +1,48 @@
+===== Evaluating setup B =====
+TEST SET: test.twbkit
+
+MODEL: B-generic-s001
+swc->fra
+Translating test.twbkit/test-twbkit with model B-sw-fr-generic-s001
+BLEU+case.mixed+numrefs.1+smooth.exp+tok.none+version.1.3.6 = 19.8 46.8/25.8/15.4/9.6 (BP = 0.963 ratio = 0.963 hyp_len = 9006 ref_len = 9350)
+chrF2+case.mixed+numchars.6+numrefs.1+space.False+tok.none+version.1.3.6 = 0.4
+BLEU+case.mixed+numrefs.1+smooth.exp+tok.intl+version.1.3.6 = 24.7 57.3/32.2/21.0/14.2 (BP = 0.907 ratio = 0.911 hyp_len = 11060 ref_len = 12145)
+chrF2+case.mixed+numchars.6+numrefs.1+space.False+tok.intl+version.1.3.6 = 0.4
+
+fra->swc
+Translating test.twbkit/test-twbkit with model B-fr-sw-generic-s001
+BLEU+case.mixed+numrefs.1+smooth.exp+tok.none+version.1.3.6 = 11.4 36.0/16.2/8.3/4.6 (BP = 0.934 ratio = 0.936 hyp_len = 6837 ref_len = 7306)
+chrF2+case.mixed+numchars.6+numrefs.1+space.False+tok.none+version.1.3.6 = 0.5
+BLEU+case.mixed+numrefs.1+smooth.exp+tok.intl+version.1.3.6 = 15.1 49.1/21.5/11.0/6.4 (BP = 0.915 ratio = 0.919 hyp_len = 8040 ref_len = 8753)
+chrF2+case.mixed+numchars.6+numrefs.1+space.False+tok.intl+version.1.3.6 = 0.5
+
+MODEL: B-inswc-s001-i001
+swc->fra
+Translating test.twbkit/test-twbkit with model B-swc-fra-inswc-s001-i001
+BLEU+case.mixed+numrefs.1+smooth.exp+tok.none+version.1.3.6 = 20.0 47.3/26.3/15.9/9.7 (BP = 0.955 ratio = 0.956 hyp_len = 8938 ref_len = 9350)
+chrF2+case.mixed+numchars.6+numrefs.1+space.False+tok.none+version.1.3.6 = 0.5
+BLEU+case.mixed+numrefs.1+smooth.exp+tok.intl+version.1.3.6 = 24.9 57.6/32.5/21.2/14.2 (BP = 0.908 ratio = 0.912 hyp_len = 11077 ref_len = 12145)
+chrF2+case.mixed+numchars.6+numrefs.1+space.False+tok.intl+version.1.3.6 = 0.5
+
+fra->swc
+Translating test.twbkit/test-twbkit with model B-fra-swc-inswc-s001-i001
+BLEU+case.mixed+numrefs.1+smooth.exp+tok.none+version.1.3.6 = 11.7 36.1/16.3/8.5/4.9 (BP = 0.938 ratio = 0.940 hyp_len = 6864 ref_len = 7306)
+chrF2+case.mixed+numchars.6+numrefs.1+space.False+tok.none+version.1.3.6 = 0.5
+BLEU+case.mixed+numrefs.1+smooth.exp+tok.intl+version.1.3.6 = 15.3 49.4/21.5/11.3/6.5 (BP = 0.917 ratio = 0.920 hyp_len = 8056 ref_len = 8753)
+chrF2+case.mixed+numchars.6+numrefs.1+space.False+tok.intl+version.1.3.6 = 0.5
+
+MODEL: B-intwb-s001-i001-t001
+swc->fra
+Translating test.twbkit/test-twbkit with model B-swc-fra-intwb-s001-i001-t001
+BLEU+case.mixed+numrefs.1+smooth.exp+tok.none+version.1.3.6 = 23.2 51.8/30.6/19.1/12.0 (BP = 0.943 ratio = 0.945 hyp_len = 8832 ref_len = 9350)
+chrF2+case.mixed+numchars.6+numrefs.1+space.False+tok.none+version.1.3.6 = 0.5
+BLEU+case.mixed+numrefs.1+smooth.exp+tok.intl+version.1.3.6 = 29.2 60.5/36.5/25.1/17.6 (BP = 0.928 ratio = 0.931 hyp_len = 11305 ref_len = 12145)
+chrF2+case.mixed+numchars.6+numrefs.1+space.False+tok.intl+version.1.3.6 = 0.5
+
+fra->swc
+Translating test.twbkit/test-twbkit with model B-fra-swc-intwb-s001-i001-t001
+BLEU+case.mixed+numrefs.1+smooth.exp+tok.none+version.1.3.6 = 12.0 37.2/16.9/8.6/4.6 (BP = 0.959 ratio = 0.960 hyp_len = 7015 ref_len = 7306)
+chrF2+case.mixed+numchars.6+numrefs.1+space.False+tok.none+version.1.3.6 = 0.5
+BLEU+case.mixed+numrefs.1+smooth.exp+tok.intl+version.1.3.6 = 16.2 50.2/22.7/11.8/6.6 (BP = 0.936 ratio = 0.938 hyp_len = 8212 ref_len = 8753)
+chrF2+case.mixed+numchars.6+numrefs.1+space.False+tok.intl+version.1.3.6 = 0.5
+

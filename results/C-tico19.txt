@@ -1,0 +1,48 @@
+===== Evaluating setup C =====
+TEST SET: test.tico19
+
+MODEL: C-generic-s001
+swc->fra
+Translating test.tico19/test-tico19 with model C-sw-fr-generic-s001
+BLEU+case.mixed+numrefs.1+smooth.exp+tok.none+version.1.3.6 = 14.6 46.2/23.0/13.1/7.7 (BP = 0.807 ratio = 0.824 hyp_len = 11200 ref_len = 13599)
+chrF2+case.mixed+numchars.6+numrefs.1+space.False+tok.none+version.1.3.6 = 0.4
+BLEU+case.mixed+numrefs.1+smooth.exp+tok.intl+version.1.3.6 = 17.9 56.2/29.7/18.0/11.5 (BP = 0.737 ratio = 0.766 hyp_len = 12951 ref_len = 16910)
+chrF2+case.mixed+numchars.6+numrefs.1+space.False+tok.intl+version.1.3.6 = 0.4
+
+fra->swc
+Translating test.tico19/test-tico19 with model C-fr-sw-generic-s001
+BLEU+case.mixed+numrefs.1+smooth.exp+tok.none+version.1.3.6 = 9.7 44.9/19.5/9.6/4.9 (BP = 0.680 ratio = 0.722 hyp_len = 9075 ref_len = 12573)
+chrF2+case.mixed+numchars.6+numrefs.1+space.False+tok.none+version.1.3.6 = 0.4
+BLEU+case.mixed+numrefs.1+smooth.exp+tok.intl+version.1.3.6 = 12.1 52.8/23.5/12.2/6.6 (BP = 0.679 ratio = 0.721 hyp_len = 10439 ref_len = 14473)
+chrF2+case.mixed+numchars.6+numrefs.1+space.False+tok.intl+version.1.3.6 = 0.4
+
+MODEL: C-inswc-s001-i001
+swc->fra
+Translating test.tico19/test-tico19 with model C-swc-fra-inswc-s001-i001
+BLEU+case.mixed+numrefs.1+smooth.exp+tok.none+version.1.3.6 = 14.5 46.5/23.1/13.0/7.6 (BP = 0.805 ratio = 0.822 hyp_len = 11180 ref_len = 13599)
+chrF2+case.mixed+numchars.6+numrefs.1+space.False+tok.none+version.1.3.6 = 0.4
+BLEU+case.mixed+numrefs.1+smooth.exp+tok.intl+version.1.3.6 = 18.1 57.3/30.8/18.6/11.8 (BP = 0.724 ratio = 0.756 hyp_len = 12783 ref_len = 16910)
+chrF2+case.mixed+numchars.6+numrefs.1+space.False+tok.intl+version.1.3.6 = 0.4
+
+fra->swc
+Translating test.tico19/test-tico19 with model C-fra-swc-inswc-s001-i001
+BLEU+case.mixed+numrefs.1+smooth.exp+tok.none+version.1.3.6 = 10.7 47.4/21.7/11.0/5.8 (BP = 0.670 ratio = 0.714 hyp_len = 8979 ref_len = 12573)
+chrF2+case.mixed+numchars.6+numrefs.1+space.False+tok.none+version.1.3.6 = 0.4
+BLEU+case.mixed+numrefs.1+smooth.exp+tok.intl+version.1.3.6 = 13.3 55.0/25.9/13.9/7.8 (BP = 0.670 ratio = 0.714 hyp_len = 10338 ref_len = 14473)
+chrF2+case.mixed+numchars.6+numrefs.1+space.False+tok.intl+version.1.3.6 = 0.4
+
+MODEL: C-intwb-s001-i001-t001
+swc->fra
+Translating test.tico19/test-tico19 with model C-swc-fra-intwb-s001-i001-t001
+BLEU+case.mixed+numrefs.1+smooth.exp+tok.none+version.1.3.6 = 16.4 48.2/25.1/14.8/9.1 (BP = 0.817 ratio = 0.831 hyp_len = 11307 ref_len = 13599)
+chrF2+case.mixed+numchars.6+numrefs.1+space.False+tok.none+version.1.3.6 = 0.4
+BLEU+case.mixed+numrefs.1+smooth.exp+tok.intl+version.1.3.6 = 19.8 58.7/32.6/20.4/13.4 (BP = 0.736 ratio = 0.765 hyp_len = 12937 ref_len = 16910)
+chrF2+case.mixed+numchars.6+numrefs.1+space.False+tok.intl+version.1.3.6 = 0.4
+
+fra->swc
+Translating test.tico19/test-tico19 with model C-fra-swc-intwb-s001-i001-t001
+BLEU+case.mixed+numrefs.1+smooth.exp+tok.none+version.1.3.6 = 13.2 50.8/25.0/13.7/7.9 (BP = 0.683 ratio = 0.724 hyp_len = 9104 ref_len = 12573)
+chrF2+case.mixed+numchars.6+numrefs.1+space.False+tok.none+version.1.3.6 = 0.4
+BLEU+case.mixed+numrefs.1+smooth.exp+tok.intl+version.1.3.6 = 15.7 58.2/29.1/16.7/10.1 (BP = 0.681 ratio = 0.722 hyp_len = 10453 ref_len = 14473)
+chrF2+case.mixed+numchars.6+numrefs.1+space.False+tok.intl+version.1.3.6 = 0.4
+

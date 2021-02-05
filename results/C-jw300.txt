@@ -1,0 +1,48 @@
+===== Evaluating setup C =====
+TEST SET: test.jw300
+
+MODEL: C-generic-s001
+swc->fra
+Translating test.jw300/test-jw300 with model C-sw-fr-generic-s001
+BLEU+case.mixed+numrefs.1+smooth.exp+tok.none+version.1.3.6 = 18.6 46.2/25.7/15.9/10.1 (BP = 0.891 ratio = 0.896 hyp_len = 40172 ref_len = 44813)
+chrF2+case.mixed+numchars.6+numrefs.1+space.False+tok.none+version.1.3.6 = 0.5
+BLEU+case.mixed+numrefs.1+smooth.exp+tok.intl+version.1.3.6 = 30.7 61.1/38.6/27.8/20.6 (BP = 0.900 ratio = 0.905 hyp_len = 44052 ref_len = 48670)
+chrF2+case.mixed+numchars.6+numrefs.1+space.False+tok.intl+version.1.3.6 = 0.5
+
+fra->swc
+Translating test.jw300/test-jw300 with model C-fr-sw-generic-s001
+BLEU+case.mixed+numrefs.1+smooth.exp+tok.none+version.1.3.6 = 10.6 43.0/20.6/11.0/6.3 (BP = 0.674 ratio = 0.717 hyp_len = 27934 ref_len = 38948)
+chrF2+case.mixed+numchars.6+numrefs.1+space.False+tok.none+version.1.3.6 = 0.5
+BLEU+case.mixed+numrefs.1+smooth.exp+tok.intl+version.1.3.6 = 19.9 54.0/29.5/18.6/12.3 (BP = 0.811 ratio = 0.826 hyp_len = 32199 ref_len = 38964)
+chrF2+case.mixed+numchars.6+numrefs.1+space.False+tok.intl+version.1.3.6 = 0.5
+
+MODEL: C-inswc-s001-i001
+swc->fra
+Translating test.jw300/test-jw300 with model C-swc-fra-inswc-s001-i001
+BLEU+case.mixed+numrefs.1+smooth.exp+tok.none+version.1.3.6 = 17.9 46.5/25.7/15.8/10.0 (BP = 0.859 ratio = 0.868 hyp_len = 38881 ref_len = 44813)
+chrF2+case.mixed+numchars.6+numrefs.1+space.False+tok.none+version.1.3.6 = 0.5
+BLEU+case.mixed+numrefs.1+smooth.exp+tok.intl+version.1.3.6 = 29.8 61.6/38.8/27.9/20.7 (BP = 0.869 ratio = 0.877 hyp_len = 42667 ref_len = 48670)
+chrF2+case.mixed+numchars.6+numrefs.1+space.False+tok.intl+version.1.3.6 = 0.5
+
+fra->swc
+Translating test.jw300/test-jw300 with model C-fra-swc-inswc-s001-i001
+BLEU+case.mixed+numrefs.1+smooth.exp+tok.none+version.1.3.6 = 13.3 46.5/24.2/14.1/8.6 (BP = 0.693 ratio = 0.732 hyp_len = 28493 ref_len = 38948)
+chrF2+case.mixed+numchars.6+numrefs.1+space.False+tok.none+version.1.3.6 = 0.5
+BLEU+case.mixed+numrefs.1+smooth.exp+tok.intl+version.1.3.6 = 23.2 57.1/33.1/22.0/15.2 (BP = 0.824 ratio = 0.838 hyp_len = 32657 ref_len = 38964)
+chrF2+case.mixed+numchars.6+numrefs.1+space.False+tok.intl+version.1.3.6 = 0.5
+
+MODEL: C-intwb-s001-i001-t001
+swc->fra
+Translating test.jw300/test-jw300 with model C-swc-fra-intwb-s001-i001-t001
+BLEU+case.mixed+numrefs.1+smooth.exp+tok.none+version.1.3.6 = 18.4 46.4/25.4/15.6/9.8 (BP = 0.893 ratio = 0.899 hyp_len = 40265 ref_len = 44813)
+chrF2+case.mixed+numchars.6+numrefs.1+space.False+tok.none+version.1.3.6 = 0.5
+BLEU+case.mixed+numrefs.1+smooth.exp+tok.intl+version.1.3.6 = 29.8 60.3/37.4/26.6/19.6 (BP = 0.904 ratio = 0.909 hyp_len = 44217 ref_len = 48670)
+chrF2+case.mixed+numchars.6+numrefs.1+space.False+tok.intl+version.1.3.6 = 0.5
+
+fra->swc
+Translating test.jw300/test-jw300 with model C-fra-swc-intwb-s001-i001-t001
+BLEU+case.mixed+numrefs.1+smooth.exp+tok.none+version.1.3.6 = 12.3 44.6/22.2/12.4/7.3 (BP = 0.707 ratio = 0.742 hyp_len = 28917 ref_len = 38948)
+chrF2+case.mixed+numchars.6+numrefs.1+space.False+tok.none+version.1.3.6 = 0.5
+BLEU+case.mixed+numrefs.1+smooth.exp+tok.intl+version.1.3.6 = 21.7 55.0/30.8/19.8/13.2 (BP = 0.842 ratio = 0.853 hyp_len = 33247 ref_len = 38964)
+chrF2+case.mixed+numchars.6+numrefs.1+space.False+tok.intl+version.1.3.6 = 0.5
+

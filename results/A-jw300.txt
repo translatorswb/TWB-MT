@@ -1,0 +1,37 @@
+===== Evaluating setup A =====
+TEST SET: test.jw300
+
+MODEL: A-generic-s001
+swc->fra
+Translating test.jw300/test-jw300 with model A-swc-fra-generic-s001
+BLEU+case.mixed+numrefs.1+smooth.exp+tok.none+version.1.3.6 = 16.6 45.0/24.0/14.3/8.8 (BP = 0.866 ratio = 0.874 hyp_len = 39181 ref_len = 44813)
+chrF2+case.mixed+numchars.6+numrefs.1+space.False+tok.none+version.1.3.6 = 0.5
+BLEU+case.mixed+numrefs.1+smooth.exp+tok.intl+version.1.3.6 = 27.9 59.8/36.4/25.6/18.6 (BP = 0.876 ratio = 0.883 hyp_len = 42963 ref_len = 48670)
+chrF2+case.mixed+numchars.6+numrefs.1+space.False+tok.intl+version.1.3.6 = 0.5
+
+fra->swc
+Translating test.jw300/test-jw300 with model A-fra-swc-generic-s001
+BLEU+case.mixed+numrefs.1+smooth.exp+tok.none+version.1.3.6 = 12.7 45.8/23.7/13.7/8.5 (BP = 0.676 ratio = 0.719 hyp_len = 27989 ref_len = 38948)
+chrF2+case.mixed+numchars.6+numrefs.1+space.False+tok.none+version.1.3.6 = 0.5
+BLEU+case.mixed+numrefs.1+smooth.exp+tok.intl+version.1.3.6 = 22.1 56.2/32.2/21.1/14.6 (BP = 0.809 ratio = 0.825 hyp_len = 32160 ref_len = 38964)
+chrF2+case.mixed+numchars.6+numrefs.1+space.False+tok.intl+version.1.3.6 = 0.5
+
+MODEL: A-inswc-s001-i001
+swc->fra
+Translating test.jw300/test-jw300 with model A-swc-fra-inswc-s001-i001
+BLEU+case.mixed+numrefs.1+smooth.exp+tok.none+version.1.3.6 = 16.7 45.0/23.4/13.8/8.4 (BP = 0.889 ratio = 0.895 hyp_len = 40111 ref_len = 44813)
+chrF2+case.mixed+numchars.6+numrefs.1+space.False+tok.none+version.1.3.6 = 0.5
+BLEU+case.mixed+numrefs.1+smooth.exp+tok.intl+version.1.3.6 = 26.7 57.5/33.9/23.2/16.4 (BP = 0.911 ratio = 0.915 hyp_len = 44525 ref_len = 48670)
+chrF2+case.mixed+numchars.6+numrefs.1+space.False+tok.intl+version.1.3.6 = 0.5
+
+fra->swc
+Translating test.jw300/test-jw300 with model A-fra-swc-inswc-s001-i001
+BLEU+case.mixed+numrefs.1+smooth.exp+tok.none+version.1.3.6 = 10.7 42.7/19.9/10.5/5.9 (BP = 0.705 ratio = 0.741 hyp_len = 28866 ref_len = 38948)
+chrF2+case.mixed+numchars.6+numrefs.1+space.False+tok.none+version.1.3.6 = 0.5
+BLEU+case.mixed+numrefs.1+smooth.exp+tok.intl+version.1.3.6 = 19.4 52.9/28.0/17.1/11.0 (BP = 0.845 ratio = 0.856 hyp_len = 33351 ref_len = 38964)
+chrF2+case.mixed+numchars.6+numrefs.1+space.False+tok.intl+version.1.3.6 = 0.5
+
+MODEL: A-intwb-s001-i001-t001
+swc->fra
+
+fra->swc
