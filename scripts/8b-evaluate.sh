@@ -20,7 +20,8 @@ function do_evaluate() {
 
 	#bash $FS/translator.sh $CORPORADIR/$CORPUS/$C.$SRC $CORPORADIR/$CORPUS/$INFERENCEOUT $MODELPATH $BPE
 	
-	cat $CORPORADIR/$CORPUS/$INFERENCEOUT | sacrebleu $CORPORADIR/$CORPUS/$C.$TGT -tok none --metrics {bleu,chrf} | tee $EVALDIR/$EVALOUT
+	cat $CORPORADIR/$CORPUS/$INFERENCEOUT | sacrebleu $CORPORADIR/$CORPUS/$C.$TGT -tok none --metrics {bleu,chrf} | tee $EVALDIR/$INFERENCEOUT.results.tok-none.txt
+	cat $CORPORADIR/$CORPUS/$INFERENCEOUT | sacrebleu $CORPORADIR/$CORPUS/$C.$TGT -tok intl --metrics {bleu,chrf} | tee $EVALDIR/$INFERENCEOUT.results.tok-intl.txt
 }
 
 #PARAMETERS
