@@ -9,7 +9,7 @@ MODELDIR="$FS/../onmt/models"
 #PROCEDURES
 function do_translate() {
 
-	MODELNAME=$TRAINID-$SRC-$TGT-$TRAINTAGS
+	MODELNAME=$TRAINID-$MODELTAGS
 	echo Translating $CORPUS/$C with model $MODELNAME
 
 	MODELPATH=`ls $MODELDIR/$MODELNAME/${MODELNAME}_best_*`
@@ -22,7 +22,7 @@ function do_translate() {
 
 #PARAMETERS
 TRAINID=$1
-TRAINTAGS=$2
+MODELTAGS=$2
 BPEID=$3
 CORPUS=$4
 C=$5
