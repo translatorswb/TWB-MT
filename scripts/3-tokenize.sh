@@ -38,7 +38,7 @@ SETS="train dev"
 SUFFIX="norm.fixel.masprep"
 SRC="swc"
 TGT="fra"
-tokenize_sets
+#tokenize_sets
 
 CORPUS="mix.swc"
 C="swcmix"
@@ -46,7 +46,7 @@ SETS="train"
 SUFFIX="norm.fixel.masprep"
 SRC="swc"
 TGT="fra"
-tokenize_sets
+#tokenize_sets
 
 CORPUS="mix.sw"
 C="swmix"
@@ -54,7 +54,7 @@ SETS="train"
 SUFFIX="norm.fixel.masprep"
 SRC="sw"
 TGT="fr"
-tokenize_sets
+#tokenize_sets
 
 CORPUS="mix.mted"
 C="mtedmix"
