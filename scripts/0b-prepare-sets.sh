@@ -64,7 +64,7 @@ CORPUS="mix.mono"
 C="monomix"
 SRC="sw"
 TGT="fr"
-SRCSETS="monosw/monosw.sw mix.mtedfix/mtedmix.sw"
-TGTSETS="monosw/monosw.fr mix.mtedfix/mtedmix.fr"
+SRCSETS="monosw/monosw.sw mix.mted/mtedmix.sw"
+TGTSETS="monosw/monosw.fr mix.mted/mtedmix.fr"
 mix_sets
 
