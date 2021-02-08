@@ -143,7 +143,7 @@ for line in input:
   line, nmatches = ellipsis_absense_blank_between_alnum.subn("\g<start>... \g<end>", line)
   count_ellipsis_absense_blank_between_alnum += nmatches
 
-  output.write(u"{0}\n".format(line.strip()))
+  output.write("%s\n"%line.strip())
 
 
 if filestats != "":
