@@ -24,7 +24,7 @@ TGTTRAIN="swc"
 SRCDEV="fra"
 TGTDEV="swc"
 DATASET="twbmix"
-#preprocess
+preprocess
 
 #twbmix swc-fra
 SRCTRAIN="swc"
@@ -32,7 +32,7 @@ TGTTRAIN="fra"
 SRCDEV="swc"
 TGTDEV="fra"
 DATASET="twbmix"
-#preprocess
+preprocess
 
 #swcmix fra-swc
 CORPUSTRAIN="$CORPORADIR/mix.swc/swcmix.train.norm.fixel.masprep.tok.low"
@@ -42,7 +42,7 @@ TGTTRAIN="swc"
 SRCDEV="fra"
 TGTDEV="swc"
 DATASET="swcmix"
-#preprocess
+preprocess
 
 #swcmix swc-fra
 SRCTRAIN="swc"
@@ -50,7 +50,7 @@ TGTTRAIN="fra"
 SRCDEV="swc"
 TGTDEV="fra"
 DATASET="swcmix"
-#preprocess
+preprocess
 
 #swmix fr-sw
 CORPUSTRAIN="$CORPORADIR/mix.sw/swmix.train.norm.fixel.masprep.tok.low"
@@ -60,7 +60,7 @@ TGTTRAIN="sw"
 SRCDEV="fra"
 TGTDEV="swc"
 DATASET="swmix"
-#preprocess
+preprocess
 
 #swmix sw-fr
 SRCTRAIN="sw"
@@ -68,7 +68,7 @@ TGTTRAIN="fr"
 SRCDEV="swc"
 TGTDEV="fra"
 DATASET="swmix"
-#preprocess
+preprocess
 
 #mtedmix fr-sw
 CORPUSTRAIN="$CORPORADIR/mix.mted/mtedmix.train.norm.fixel.masprep.tok.low"
@@ -105,46 +105,6 @@ SRCDEV="swc"
 TGTDEV="fra"
 DATASET="monomix"
 preprocess
-
-# #toy fra-swc
-# CORPUSTRAIN="$CORPORADIR/toy/toy.train.norm.fixel.masprep.tok.low"
-# CORPUSDEV="$CORPORADIR/toy/toy.dev.norm.fixel.masprep.tok.low"
-# SRCTRAIN="fra"
-# TGTTRAIN="swc"
-# SRCDEV="fra"
-# TGTDEV="swc"
-# DATASET="toy"
-# #preprocess
-
-# #toy swc-fra
-# CORPUSTRAIN="$CORPORADIR/toy/toy.train.norm.fixel.masprep.tok.low"
-# CORPUSDEV="$CORPORADIR/toy/toy.dev.norm.fixel.masprep.tok.low"
-# SRCTRAIN="swc"
-# TGTTRAIN="fra"
-# SRCDEV="swc"
-# TGTDEV="fra"
-# DATASET="toy"
-# preprocess
-
-# #toy fr-sw
-# CORPUSTRAIN="$CORPORADIR/toy/toy.train.norm.fixel.masprep.tok.low"
-# CORPUSDEV="$CORPORADIR/toy/toy.dev.norm.fixel.masprep.tok.low"
-# SRCTRAIN="fr"
-# TGTTRAIN="sw"
-# SRCDEV="fr"
-# TGTDEV="sw"
-# DATASET="toy"
-# #preprocess
-
-# #toy sw-fr
-# CORPUSTRAIN="$CORPORADIR/toy/toy.train.norm.fixel.masprep.tok.low"
-# CORPUSDEV="$CORPORADIR/toy/toy.dev.norm.fixel.masprep.tok.low"
-# SRCTRAIN="sw"
-# TGTTRAIN="fr"
-# SRCDEV="sw"
-# TGTDEV="fr"
-# DATASET="toy"
-# preprocess
 
 #ending alert 
 echo -en "\007"

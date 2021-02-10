@@ -1,6 +1,6 @@
-# Batch evaluation script 
+# Batch evaluation script for paper. Does inference and evaluates in three stages.
 # Example call
-# $ bash 8-evaluate-all.sh D test.twbkit test-twbkit > ../results/D-twbkit.txt
+# $ bash 8-evaluate-all.sh D test.twbkit test-twbkit [> ../results/D-twbkit.txt]
 
 BPEID=BPE-fixmix-6000
 

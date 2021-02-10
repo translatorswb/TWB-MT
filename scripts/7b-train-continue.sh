@@ -1,17 +1,23 @@
 #! /bin/bash
+# Script for bidirectional training continuing from a base model
+# Example call: 
+# bash 7a-train-continue.sh <experiment-prefix> <model-type> <model-id> <bpe-id> <dataset-id> <lang-1> <lang-2> <batch-size> <validation-save-steps> <base-model-tags> <base-model-lang1> <base-model_lang2>
+
 #INITIALIZATIONS (Do not edit)
 FS="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 CORPORADIR="$FS/../corpora"
 DATADIR="$FS/../onmt/data"
 MODELDIR="$FS/../onmt/models"
 LOGDIR="$FS/../onmt/logs"
-MODELTYPE="inswc"
+
+#In-script Options
 SEED="42"
+REMOVECHECKPOINTS="1"  #Make 0 if you want to keep non-best models at the end
 
 #PROCEDURES
 function do_train() {
     # BASEMODELNAME=$MODELPREFIX-$BASEMODELSRC-$BASEMODELTGT-$BASEMODELTYPE-$BASEMODELID
-    BASEMODELID=`echo $BASEMODELNAME | cut -d'-' -f5-`
+    BASEMODELID=`echo $BASEMODELTAGS | cut -d'-' -f2-`
     MODELNAME=$MODELPREFIX-$MODELSRC-$MODELTGT-$MODELTYPE-$BASEMODELID-$MODELID
 
     echo Training $MODELNAME on $BASEMODELNAME
@@ -32,8 +38,8 @@ function do_train() {
             -save_model $MODELDIR/$MODELNAME/$MODELNAME \
             -layers 6 -rnn_size 512 -word_vec_size 512 -transformer_ff 2048 -heads 8  \
             -encoder_type transformer -decoder_type transformer -position_encoding \
-        -max_generator_batches 2 -dropout 0.2 -seed $SEED \
-        -batch_size $BATCHSIZE -batch_type tokens -normalization tokens  -accum_count 2 \
+        -max_generator_batches 2 -dropout 0.3 -seed $SEED \
+        -batch_size $BATCHSIZE  -batch_type tokens -normalization tokens  -accum_count 2 \
         -optim adam -adam_beta2 0.998 -decay_method noam -warmup_steps 4000 -learning_rate 2 \
         -max_grad_norm 0 -param_init 0  -param_init_glorot -label_smoothing 0.1 \
         -train_steps 1000000 -early_stopping 5 -early_stopping_criteria ppl \
@@ -45,43 +51,43 @@ function do_train() {
     BESTMODEL=$MODELDIR/$MODELNAME/${MODELNAME}_step_${BESTSTEP}.pt
     echo Best model: $BESTMODEL
     mv $BESTMODEL $MODELDIR/$MODELNAME/${MODELNAME}_best_step_${BESTSTEP}.pt
-    rm $MODELDIR/$MODELNAME/${MODELNAME}_step_* #Comment out if you want to keep non-best models
-
-    #For debug
-    # touch $MODELDIR/$MODELNAME/${MODELNAME}_best.pt
+    
+    if [ $REMOVECHECKPOINTS == 1 ]
+    then
+      rm $MODELDIR/$MODELNAME/${MODELNAME}_step_*
+    fi
 }
 
 #PARAMETERS
 MODELPREFIX=$1
-BPEID=$2
-DATASETID=$3
-LANGA=$4
-LANGB=$5
-BATCHSIZE=$6
-VALIDSAVE=$7
-BASEMODELTAGS=$8
-BASEMODELLANGA=$9
-BASEMODELLANGB=${10}
-
+MODELTYPE=$2   #"intwb" #TODO
+MODELID=$3  #"t001"
+BPEID=$4
+DATASETID=$5
+LANGA=$6
+LANGB=$7
+BATCHSIZE=$8
+VALIDSAVE=$9
+BASEMODELTAGS=${10}
+BASEMODELLANGA=${11}
+BASEMODELLANGB=${12}
 
 #CALLS
 MODELSRC=$LANGA
 MODELTGT=$LANGB
 BASEMODELSRC=$BASEMODELLANGA
 BASEMODELTGT=$BASEMODELLANGB
-MODELID="i001"
+
 DATASET="$DATASETID.$MODELSRC-$MODELTGT"
 BASEMODELNAME=$MODELPREFIX-$BASEMODELSRC-$BASEMODELTGT-$BASEMODELTAGS
-REPORT=50
+REPORT=10
 do_train
 
 MODELSRC=$LANGB
 MODELTGT=$LANGA
 BASEMODELSRC=$BASEMODELLANGB
 BASEMODELTGT=$BASEMODELLANGA
-BASEMODELTYPE="generic"
-BASEMODELID="s001"
-MODELID="i001"
+
 DATASET="$DATASETID.$MODELSRC-$MODELTGT"
 BASEMODELNAME=$MODELPREFIX-$BASEMODELSRC-$BASEMODELTGT-$BASEMODELTAGS
 do_train

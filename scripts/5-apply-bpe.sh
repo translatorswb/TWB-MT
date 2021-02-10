@@ -43,7 +43,7 @@ SUFFIX="norm.fixel.masprep.tok.low"
 SETS="train dev"
 SRC="swc"
 TGT="fra"
-#apply_bpe_to_sets
+apply_bpe_to_sets
 
 CORPUS="mix.swc"
 C="swcmix"
@@ -51,7 +51,7 @@ SUFFIX="norm.fixel.masprep.tok.low"
 SETS="train"
 SRC="swc"
 TGT="fra"
-#apply_bpe_to_sets
+apply_bpe_to_sets
 
 CORPUS="mix.sw"
 C="swmix"
@@ -59,7 +59,7 @@ SUFFIX="norm.fixel.masprep.tok.low"
 SETS="train"
 SRC="sw"
 TGT="fr"
-#apply_bpe_to_sets
+apply_bpe_to_sets
 
 CORPUS="mix.mted"
 C="mtedmix"
@@ -76,14 +76,6 @@ SETS="train"
 SRC="sw"
 TGT="fr"
 apply_bpe_to_sets
-
-CORPUS="toy"
-C="toy"
-SUFFIX="norm.fixel.masprep.tok.low"
-SETS="train dev"
-SRC="swc"
-TGT="fra"
-#apply_bpe_to_sets
 
 #ending alert 
 echo -en "\007"

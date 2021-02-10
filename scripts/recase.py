@@ -8,14 +8,17 @@ import sys
 in_file = sys.argv[1]
 out_file = in_file + ".cap"
 
-sent_tokenizer = nltk.data.load('tokenizers/punkt/english.pickle')
+sent_tokenizer = nltk.data.load('tokenizers/punkt/french.pickle')
 with open(in_file, 'r') as f:
-    text = f.read()
+    lines = f.readlines()
 
-sentences = sent_tokenizer.tokenize(text)
-sentences = [sent.capitalize() for sent in sentences]
-
-recased = ' '.join(sentences)
+recased_sents = []
+for line in lines:
+    sentences = sent_tokenizer.tokenize(line)
+    sentences = [sent.capitalize() for sent in sentences]
+    recased = ' '.join(sentences)
+    recased_sents.append(recased)
 
 with open(out_file, 'w') as f:
-    f.write(recased + "\n")
+    for sent in recased_sents:        
+        f.write(sent + "\n")
