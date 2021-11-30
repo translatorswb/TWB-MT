@@ -1,7 +1,7 @@
 # TWB-MT
 TWB neural machine translation pipeline
 
-This repository contains the necessary scripts for training and evaluating a neural machine translation system from scratch. It serves both as a template and a memory of experiments for various language pairs within TWB's [Gamayun initiative](https://translatorswithoutborders.org/gamayun/).
+This repository contains the necessary scripts for training and evaluating a neural machine translation system from scratch. It serves both as a template and a memory of experiments for various language pairs within TWB's [Gamayun initiative](https://gamayun.translatorswb.org).
 
 Master branch is kept as a template for training a toy model of Tigrinya to English. Make sure it works before building your own pipeline. 
 
